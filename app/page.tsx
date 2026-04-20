@@ -6,7 +6,7 @@ import PricingPlans from './PricingPlans';
 
 const modules = [
   {
-    title: 'Finance | ফাইন্যান্স',
+    title: 'Finance & Accounting | ফাইন্যান্স',
     text: 'General ledger, receivables, budgeting, tax, and cash flow stay connected. | হিসাব, বাজেট, ট্যাক্স ও ক্যাশ ফ্লো এক জায়গা থেকে দেখা যায়।',
   },
   {
@@ -165,7 +165,7 @@ export default function Home() {
           <a className='brand' href='#top'>
             <Image
               src='/erp_logo.png'
-              alt='ERP Compass logo'
+              alt='ERP logo'
               width={240}
               height={75}
               priority
@@ -255,7 +255,7 @@ export default function Home() {
                   </small>
                 </strong>
                 <strong>
-                  12+{' '}
+                  40+{' '}
                   <small>
                     <LangText en='ERP Modules' bn='ERP মডিউল' />
                   </small>
@@ -437,6 +437,90 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section
+        className='reportShowcase sectionWrap animatedSection'
+        id='reports'
+      >
+        <div className='reportIntro'>
+          <div>
+            <p className='eyebrow'>
+              <LangText en='Reports & Analytics' bn='রিপোর্ট ও অ্যানালিটিক্স' />
+            </p>
+            <h2>
+              <LangText
+                en='See the full business picture before decisions get expensive.'
+                bn='সিদ্ধান্ত ব্যয়বহুল হওয়ার আগেই পুরো ব্যবসার ছবি দেখুন।'
+              />
+            </h2>
+          </div>
+          <p>
+            <LangText
+              en='ERP reports turn finance, inventory, sales, HR, and operations data into clear dashboards, trend lines, and decision-ready summaries.'
+              bn='ERP রিপোর্ট ফাইন্যান্স, ইনভেন্টরি, সেলস, HR ও অপারেশন ডেটাকে পরিষ্কার ড্যাশবোর্ড, ট্রেন্ডলাইন ও সিদ্ধান্তের উপযোগী সারাংশে বদলে দেয়।'
+            />
+          </p>
+        </div>
+
+        <div className='reportGrid'>
+          <article className='reportCard reportLineCard'>
+            <div className='reportCardVisual'>
+              <div className='reportChartGrid'></div>
+              <svg viewBox='0 0 520 220' aria-hidden='true'>
+                <polyline points='0,145 48,178 96,100 148,52 202,132 268,56 330,165 398,92 464,156 520,114' />
+              </svg>
+              <span className='chartTag tagOne'>+32%</span>
+              <span className='chartTag tagTwo'>Live</span>
+            </div>
+            <div className='reportCardBody'>
+              <span className='reportNumber'>01</span>
+              <h3>
+                <LangText en='Real-time Reporting' bn='রিয়েল-টাইম রিপোর্টিং' />
+              </h3>
+              <p>
+                <LangText
+                  en='Track sales, cash flow, stock movement, and approvals from one live reporting view.'
+                  bn='একটি লাইভ রিপোর্টিং ভিউ থেকে সেলস, ক্যাশ ফ্লো, স্টক মুভমেন্ট ও অনুমোদন ট্র্যাক করুন।'
+                />
+              </p>
+            </div>
+          </article>
+
+          <article className='reportCard reportDonutCard'>
+            <div className='reportCardVisual'>
+              <div className='donutChart'>
+                <span></span>
+              </div>
+              <div className='donutLegend'>
+                <span>
+                  <i></i> Finance 42%
+                </span>
+                <span>
+                  <i></i> Sales 31%
+                </span>
+                <span>
+                  <i></i> Stock 27%
+                </span>
+              </div>
+            </div>
+            <div className='reportCardBody'>
+              <span className='reportNumber'>02</span>
+              <h3>
+                <LangText
+                  en='Management Dashboards'
+                  bn='ম্যানেজমেন্ট ড্যাশবোর্ড'
+                />
+              </h3>
+              <p>
+                <LangText
+                  en='Give leaders a clean command view with KPIs, department summaries, and branch performance.'
+                  bn='KPI, ডিপার্টমেন্ট সামারি ও ব্রাঞ্চ পারফরম্যান্সসহ লিডারদের জন্য পরিষ্কার কমান্ড ভিউ দিন।'
+                />
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -750,7 +834,7 @@ export default function Home() {
             </a>
             <p>
               <LangText
-                en='A connected ERP information hub for finance, inventory, HR, sales, operations, reporting, and business intelligence.'
+                en='A connected ERP information hub for finance & accounting, inventory, HR, sales, operations, reporting, and business intelligence.'
                 bn='ফাইন্যান্স, ইনভেন্টরি, এইচআর, সেলস, অপারেশন, রিপোর্টিং ও বিজনেস ইন্টেলিজেন্সের জন্য একটি কানেক্টেড ERP ইনফরমেশন হাব।'
               />
             </p>

@@ -1,41 +1,37 @@
-﻿const plans = [
+﻿const sharedFeatures = [
+  ["Finance, inventory, sales, HR", "ফাইন্যান্স, ইনভেন্টরি, সেলস, HR"],
+  ["Role-based dashboard", "রোল-বেইজড ড্যাশবোর্ড"],
+  ["Reports and approvals", "রিপোর্ট ও অনুমোদন"],
+  ["Web portal access", "ওয়েব পোর্টাল অ্যাক্সেস"],
+  ["Support included", "সাপোর্ট অন্তর্ভুক্ত"],
+];
+
+const plans = [
   {
     nameEn: "Monthly",
     nameBn: "মাসিক",
-    taglineEn: "Ideal for new businesses.",
-    taglineBn: "নতুন ব্যবসার জন্য উপযুক্ত।",
-    price: "USD 99",
+    taglineEn: "Flexible access for teams that prefer month-to-month billing.",
+    taglineBn: "মাসে মাসে পেমেন্ট করতে চান এমন টিমের জন্য ফ্লেক্সিবল অ্যাক্সেস।",
+    price: "1000 TK",
     periodEn: "Per month",
     periodBn: "প্রতি মাসে",
-    noteEn: "Core ERP setup",
-    noteBn: "কোর ERP সেটআপ",
+    noteEn: "Full ERP access",
+    noteBn: "সম্পূর্ণ ERP অ্যাক্সেস",
     accent: "violet",
-    features: [
-      ["Finance & inventory basics", "ফাইন্যান্স ও ইনভেন্টরি বেসিক"],
-      ["Sales order tracking", "সেলস অর্ডার ট্র্যাকিং"],
-      ["Web portal access", "ওয়েব পোর্টাল অ্যাক্সেস"],
-      ["Basic reports", "বেসিক রিপোর্ট"],
-      ["Email support", "ইমেইল সাপোর্ট"],
-    ],
+    features: sharedFeatures,
   },
   {
     nameEn: "Yearly",
     nameBn: "বার্ষিক",
-    taglineEn: "Perfect for growing teams.",
-    taglineBn: "গ্রোইং টিমের জন্য পারফেক্ট।",
-    price: "USD 1,990",
+    taglineEn: "Best for businesses that want one simple annual renewal.",
+    taglineBn: "একবারে বার্ষিক রিনিউয়াল চান এমন ব্যবসার জন্য উপযুক্ত।",
+    price: "12000 TK",
     periodEn: "Per year",
     periodBn: "প্রতি বছরে",
-    noteEn: "Advanced ERP workflow",
-    noteBn: "অ্যাডভান্সড ERP ওয়ার্কফ্লো",
+    noteEn: "Full ERP access",
+    noteBn: "সম্পূর্ণ ERP অ্যাক্সেস",
     accent: "rose",
-    features: [
-      ["Finance, inventory, CRM", "ফাইন্যান্স, ইনভেন্টরি, CRM"],
-      ["HR and approval flows", "এইচআর ও অনুমোদন ফ্লো"],
-      ["Role-based dashboard", "রোল-বেইজড ড্যাশবোর্ড"],
-      ["Custom reports", "কাস্টম রিপোর্ট"],
-      ["Priority support", "প্রায়োরিটি সাপোর্ট"],
-    ],
+    features: sharedFeatures,
   },
 ];
 
