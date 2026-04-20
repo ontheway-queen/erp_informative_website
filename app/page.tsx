@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import DemoRequest from './DemoRequest';
 import LanguageToggle from './LanguageToggle';
+import PricingPlans from './PricingPlans';
 
 const modules = [
   {
@@ -54,6 +55,63 @@ const kpis = [
   { value: 'Weeks', label: 'saved through automated reports | রিপোর্ট অটোমেশনে সময় বাঁচে' },
 ];
 
+const industries = [
+  {
+    title: 'Retail & Ecommerce | রিটেইল ও ই-কমার্স',
+    text: 'Unify POS, online orders, stock, returns, customer data, and finance. | POS, অনলাইন অর্ডার, স্টক, রিটার্ন, কাস্টমার ডেটা ও ফাইন্যান্স একসাথে করুন।',
+  },
+  {
+    title: 'Manufacturing | ম্যানুফ্যাকচারিং',
+    text: 'Control production plans, raw materials, machine usage, quality, and costing. | উৎপাদন পরিকল্পনা, কাঁচামাল, মেশিন ব্যবহার, কোয়ালিটি ও কস্টিং নিয়ন্ত্রণ করুন।',
+  },
+  {
+    title: 'Distribution | ডিস্ট্রিবিউশন',
+    text: 'Track warehouses, delivery routes, purchase cycles, sales teams, and collections. | গুদাম, ডেলিভারি রুট, ক্রয় চক্র, সেলস টিম ও কালেকশন ট্র্যাক করুন।',
+  },
+  {
+    title: 'Service Business | সার্ভিস বিজনেস',
+    text: 'Manage projects, support tickets, billing, resources, contracts, and customer history. | প্রজেক্ট, সাপোর্ট টিকেট, বিলিং, রিসোর্স, কন্ট্রাক্ট ও কাস্টমার হিস্ট্রি ম্যানেজ করুন।',
+  },
+];
+
+const comparisons = [
+  {
+    before: 'Manual spreadsheet updates | ম্যানুয়াল স্প্রেডশিট আপডেট',
+    after: 'Live dashboards and automated reports | লাইভ ড্যাশবোর্ড ও অটোমেটেড রিপোর্ট',
+  },
+  {
+    before: 'Separate finance, sales, and stock data | ফাইন্যান্স, সেলস ও স্টক আলাদা ডেটা',
+    after: 'One connected operational database | একটি কানেক্টেড অপারেশনাল ডেটাবেস',
+  },
+  {
+    before: 'Slow approvals and unclear responsibility | ধীর অনুমোদন ও অস্পষ্ট দায়িত্ব',
+    after: 'Workflow rules with audit trails | অডিট ট্রেইলসহ ওয়ার্কফ্লো রুল',
+  },
+  {
+    before: 'Decisions based on old information | পুরোনো তথ্যের ওপর সিদ্ধান্ত',
+    after: 'Real-time visibility for managers | ম্যানেজারদের জন্য রিয়েল-টাইম ভিজিবিলিটি',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Who needs ERP? | কার ERP দরকার?',
+    answer: 'Any growing company that manages orders, inventory, people, finance, approvals, or multiple branches can benefit from ERP. | যে ব্যবসায় অর্ডার, স্টক, কর্মী, হিসাব, অনুমোদন বা একাধিক ব্রাঞ্চ আছে, তাদের ERP দরকার হতে পারে।',
+  },
+  {
+    question: 'Is ERP only for large companies? | ERP কি শুধু বড় কোম্পানির জন্য?',
+    answer: 'No. Small and medium businesses can start with core modules and scale gradually. | না। ছোট ও মাঝারি ব্যবসা প্রয়োজনীয় মডিউল দিয়ে শুরু করে ধীরে ধীরে স্কেল করতে পারে।',
+  },
+  {
+    question: 'How long does implementation take? | ইমপ্লিমেন্টেশন কতদিন লাগে?',
+    answer: 'It depends on modules, data quality, integrations, and training scope. A phased rollout is usually safer. | মডিউল, ডেটা, ইন্টিগ্রেশন ও ট্রেনিংয়ের ওপর সময় নির্ভর করে। ধাপে ধাপে লাইভ করা সাধারণত নিরাপদ।',
+  },
+  {
+    question: 'What should be prepared before ERP? | ERP শুরুর আগে কী প্রস্তুতি দরকার?',
+    answer: 'Document processes, clean master data, define approval rules, and assign owners for each department. | প্রসেস ডকুমেন্ট, মাস্টার ডেটা পরিষ্কার, অনুমোদন রুল এবং প্রতিটি বিভাগের দায়িত্বশীল ব্যক্তি ঠিক করুন।',
+  },
+];
+
 function LangText({ en, bn }: { en: string; bn: string }) {
   return (
     <>
@@ -102,6 +160,7 @@ export default function Home() {
             <a href='#benefits'><LangText en='Benefits' bn='সুবিধা' /></a>
             <a href='#implementation'><LangText en='Implementation' bn='বাস্তবায়ন' /></a>
             <a href='#selection'><LangText en='Selection' bn='নির্বাচন' /></a>
+            <a href='#pricing'><LangText en='Pricing' bn='প্রাইসিং' /></a>
             <a className='navDemoButton' href='#demo'>
               <LangText en='Request Demo' bn='ডেমো চাই' />
             </a>
@@ -254,6 +313,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className='industryShowcase sectionWrap animatedSection'>
+        <div className='sectionHead'>
+          <p className='eyebrow'><LangText en='ERP By Industry' bn='ইন্ডাস্ট্রি অনুযায়ী ERP' /></p>
+          <h2>
+            <LangText
+              en='Different businesses need different ERP priorities.'
+              bn='ভিন্ন ব্যবসার ERP প্রয়োজনও ভিন্ন হয়।'
+            />
+          </h2>
+          <p>
+            <LangText
+              en='A strong ERP website should help visitors imagine their own business inside the system.'
+              bn='ভালো ERP সাইট ভিজিটরকে নিজের ব্যবসার প্রসেস ERP-র ভেতরে কল্পনা করতে সাহায্য করে।'
+            />
+          </p>
+        </div>
+        <div className='industryGrid'>
+          {industries.map((industry) => (
+            <article className='industryCard' key={industry.title}>
+              <h3><PipeText text={industry.title} /></h3>
+              <p><PipeText text={industry.text} /></p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className='implementation sectionWrap animatedSection' id='implementation'>
         <div className='sectionHead'>
           <p className='eyebrow'><LangText en='Implementation Roadmap' bn='বাস্তবায়ন পরিকল্পনা' /></p>
@@ -280,6 +365,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className='comparisonBand animatedSection'>
+        <div className='comparisonInner'>
+          <div className='sectionHead'>
+            <p className='eyebrow'><LangText en='Before vs After ERP' bn='ERP আগে ও পরে' /></p>
+            <h2>
+              <LangText
+                en='ERP replaces scattered work with controlled intelligence.'
+                bn='ERP ছড়ানো-ছিটানো কাজকে নিয়ন্ত্রিত ইন্টেলিজেন্সে বদলে দেয়।'
+              />
+            </h2>
+          </div>
+          <div className='comparisonGrid'>
+            {comparisons.map((item) => (
+              <article className='comparisonRow' key={item.before}>
+                <div>
+                  <strong><LangText en='Before' bn='আগে' /></strong>
+                  <p><PipeText text={item.before} /></p>
+                </div>
+                <span aria-hidden='true'>→</span>
+                <div>
+                  <strong><LangText en='After ERP' bn='ERP পরে' /></strong>
+                  <p><PipeText text={item.after} /></p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className='operationsPanel animatedSection'>
         <Image
           src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=80'
@@ -301,6 +415,41 @@ export default function Home() {
               bn='সেলস, স্টক, ক্রয়, ফাইন্যান্স ও লজিস্টিকস একসাথে কাজ করে, তাই সমস্যা বড় হওয়ার আগেই দেখা যায়।'
             />
           </p>
+        </div>
+      </section>
+
+      <section className='intelligenceLayer sectionWrap animatedSection'>
+        <div>
+          <p className='eyebrow'><LangText en='ERP Intelligence Layer' bn='ERP ইন্টেলিজেন্স লেয়ার' /></p>
+          <h2>
+            <LangText
+              en='Make every department visible through one digital command center.'
+              bn='একটি ডিজিটাল কমান্ড সেন্টার থেকে প্রতিটি বিভাগকে দৃশ্যমান করুন।'
+            />
+          </h2>
+          <p>
+            <LangText
+              en='Dashboards, alerts, approvals, audit trails, and role-based access help leaders understand what is happening before it becomes a problem.'
+              bn='ড্যাশবোর্ড, অ্যালার্ট, অনুমোদন, অডিট ট্রেইল ও রোল-বেইজড অ্যাক্সেস সমস্যা বড় হওয়ার আগেই বুঝতে সাহায্য করে।'
+            />
+          </p>
+        </div>
+        <div className='commandGrid'>
+          <div className='commandHeader'>
+            <span><LangText en='Command Center' bn='কমান্ড সেন্টার' /></span>
+            <strong>98%</strong>
+          </div>
+          <div className='commandPulse' aria-hidden='true'>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span><LangText en='Live KPIs' bn='লাইভ KPI' /></span>
+          <span><LangText en='Approval alerts' bn='অনুমোদন অ্যালার্ট' /></span>
+          <span><LangText en='Role access' bn='রোল অ্যাক্সেস' /></span>
+          <span><LangText en='Audit trail' bn='অডিট ট্রেইল' /></span>
+          <span><LangText en='Forecasting' bn='ফোরকাস্টিং' /></span>
+          <span><LangText en='Branch view' bn='ব্রাঞ্চ ভিউ' /></span>
         </div>
       </section>
 
@@ -354,6 +503,28 @@ export default function Home() {
         </div>
       </section>
 
+      <PricingPlans />
+
+      <section className='faqSection sectionWrap animatedSection'>
+        <div className='sectionHead'>
+          <p className='eyebrow'><LangText en='ERP FAQ' bn='ERP প্রশ্নোত্তর' /></p>
+          <h2>
+            <LangText
+              en='Answer the questions buyers already have.'
+              bn='ক্রেতাদের সাধারণ প্রশ্নের উত্তর দিন।'
+            />
+          </h2>
+        </div>
+        <div className='faqGrid'>
+          {faqs.map((faq) => (
+            <article className='faqItem' key={faq.question}>
+              <h3><PipeText text={faq.question} /></h3>
+              <p><PipeText text={faq.answer} /></p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <DemoRequest />
 
       <section className='cta animatedSection'>
@@ -374,6 +545,71 @@ export default function Home() {
           <LangText en='Back to top' bn='উপরে যান' />
         </a>
       </section>
+
+      <footer className='siteFooter'>
+        <div className='footerGlow' aria-hidden='true'></div>
+        <div className='footerInner'>
+          <div className='footerBrand'>
+            <a href='#top' aria-label='Back to top'>
+              <Image
+                src='/erp_logo.png'
+                alt='ERP logo'
+                width={220}
+                height={69}
+              />
+            </a>
+            <p>
+              <LangText
+                en='A connected ERP information hub for finance, inventory, HR, sales, operations, reporting, and business intelligence.'
+                bn='ফাইন্যান্স, ইনভেন্টরি, এইচআর, সেলস, অপারেশন, রিপোর্টিং ও বিজনেস ইন্টেলিজেন্সের জন্য একটি কানেক্টেড ERP ইনফরমেশন হাব।'
+              />
+            </p>
+            <div className='footerSocials' aria-label='Social and contact links'>
+              <a href='https://m360ict.com/' target='_blank' rel='noreferrer'>Web</a>
+              <a href='https://www.linkedin.com/company/m360-ict' target='_blank' rel='noreferrer'>in</a>
+              <a href='mailto:sup.m360ict@gmail.com'>Mail</a>
+              <a href='tel:+8809638336699'>Call</a>
+            </div>
+          </div>
+
+          <div className='footerLinks'>
+            <h2><LangText en='Explore' bn='এক্সপ্লোর' /></h2>
+            <a href='#modules'><LangText en='ERP Modules' bn='ERP মডিউল' /></a>
+            <a href='#benefits'><LangText en='Benefits' bn='সুবিধা' /></a>
+            <a href='#implementation'><LangText en='Implementation' bn='বাস্তবায়ন' /></a>
+            <a href='#pricing'><LangText en='Pricing Plans' bn='প্রাইসিং প্ল্যান' /></a>
+            <a href='#demo'><LangText en='Request Demo' bn='ডেমো চাই' /></a>
+          </div>
+
+          <div className='footerSupport'>
+            <div className='supportHeader'>
+              <p className='eyebrow'>Support Details</p>
+              <h2>Contact Support</h2>
+            </div>
+            <div className='supportCards'>
+              <a className='supportCard' href='tel:+8809638336699'>
+                <span>Call</span>
+                <p>09638-336699, 01958398325, 01958398313, +880 1958-398308</p>
+              </a>
+              <div className='supportCard'>
+                <span>Timing</span>
+                <p>10:00AM to 06:00PM</p>
+              </div>
+              <a className='supportCard' href='mailto:sup.m360ict@gmail.com'>
+                <span>Email</span>
+                <p>sup.m360ict@gmail.com</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className='footerBottom'>
+          <p>© 2026 ERP Informative Website. All rights reserved.</p>
+          <p>
+            Developed by <a href='https://m360ict.com/' target='_blank' rel='noreferrer'>M360ICT</a>
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
