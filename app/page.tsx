@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import DemoRequest from './DemoRequest';
+import HeaderScrollState from './HeaderScrollState';
 import LanguageToggle from './LanguageToggle';
 import PricingPlans from './PricingPlans';
 
@@ -130,6 +131,7 @@ function PipeText({ text }: { text: string }) {
 export default function Home() {
   return (
     <main>
+      <HeaderScrollState />
       <a
         className='floatingDemoButton'
         href='#demo'
@@ -170,36 +172,70 @@ export default function Home() {
 
         <section className='heroContent'>
           <div className='heroPanel'>
-            <div className='heroChips' aria-label='ERP highlights'>
-              <span><LangText en='Real-time data' bn='রিয়েল-টাইম ডেটা' /></span>
-              <span><LangText en='Smart workflows' bn='স্মার্ট ওয়ার্কফ্লো' /></span>
-              <span><LangText en='Connected teams' bn='কানেক্টেড টিম' /></span>
+            <div className='heroCopy'>
+              <div className='heroChips' aria-label='ERP highlights'>
+                <span><LangText en='Real-time data' bn='রিয়েল-টাইম ডেটা' /></span>
+                <span><LangText en='Smart workflows' bn='স্মার্ট ওয়ার্কফ্লো' /></span>
+                <span><LangText en='Connected teams' bn='কানেক্টেড টিম' /></span>
+              </div>
+              <p className='eyebrow'>
+                <LangText en='Enterprise Resource Planning' bn='ইআরপি সফটওয়্যার' />
+              </p>
+              <h1>
+                <LangText
+                  en='Run finance, people, inventory, sales, and operations from one connected system.'
+                  bn='ফাইন্যান্স, ইনভেন্টরি, সেলস, এইচআর ও অপারেশন এক স্মার্ট সিস্টেমে চালান।'
+                />
+              </h1>
+              <p className='heroText'>
+                <LangText
+                  en='ERP gives growing companies a single operational backbone. It replaces scattered spreadsheets and disconnected software with shared data, controlled workflows, and real-time decisions.'
+                  bn='ERP ব্যবসার সব ডেটা, অনুমোদন ও রিপোর্টকে এক জায়গায় এনে দ্রুত সিদ্ধান্ত নিতে সাহায্য করে।'
+                />
+              </p>
+              <div className='heroActions'>
+                <a className='primaryButton' href='#demo'>
+                  <LangText en='Request demo' bn='ডেমো চাই' />
+                </a>
+                <a className='secondaryButton' href='#selection'>
+                  <LangText en='Choose wisely' bn='সঠিকভাবে বাছাই করুন' />
+                </a>
+                <a className='secondaryButton' href='#modules'>
+                  <LangText en='Explore ERP' bn='ERP দেখুন' />
+                </a>
+              </div>
+              <div className='heroStats' aria-label='ERP impact highlights'>
+                <strong>360° <small><LangText en='Business View' bn='বিজনেস ভিউ' /></small></strong>
+                <strong>12+ <small><LangText en='ERP Modules' bn='ERP মডিউল' /></small></strong>
+                <strong>24/7 <small><LangText en='Data Access' bn='ডেটা অ্যাক্সেস' /></small></strong>
+              </div>
             </div>
-            <p className='eyebrow'>
-              <LangText en='Enterprise Resource Planning' bn='ইআরপি সফটওয়্যার' />
-            </p>
-            <h1>
-              <LangText
-                en='Run finance, people, inventory, sales, and operations from one connected system.'
-                bn='ফাইন্যান্স, ইনভেন্টরি, সেলস, এইচআর ও অপারেশন এক স্মার্ট সিস্টেমে চালান।'
-              />
-            </h1>
-            <p className='heroText'>
-              <LangText
-                en='ERP gives growing companies a single operational backbone. It replaces scattered spreadsheets and disconnected software with shared data, controlled workflows, and real-time decisions.'
-                bn='ERP ব্যবসার সব ডেটা, অনুমোদন ও রিপোর্টকে এক জায়গায় এনে দ্রুত সিদ্ধান্ত নিতে সাহায্য করে।'
-              />
-            </p>
-            <div className='heroActions'>
-              <a className='primaryButton' href='#demo'>
-                <LangText en='Request demo' bn='ডেমো চাই' />
-              </a>
-              <a className='secondaryButton' href='#selection'>
-                <LangText en='Choose wisely' bn='সঠিকভাবে বাছাই করুন' />
-              </a>
-              <a className='secondaryButton' href='#modules'>
-                <LangText en='Explore ERP' bn='ERP দেখুন' />
-              </a>
+
+            <div className='heroDashboard' aria-label='ERP dashboard preview'>
+              <div className='dashboardTop'>
+                <span><LangText en='Live ERP Control' bn='লাইভ ERP কন্ট্রোল' /></span>
+                <strong>98%</strong>
+              </div>
+              <div className='dashboardChart' aria-hidden='true'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div className='dashboardList'>
+                <div>
+                  <span><LangText en='Finance' bn='ফাইন্যান্স' /></span>
+                  <p><LangText en='Cash flow synced' bn='ক্যাশ ফ্লো সিঙ্কড' /></p>
+                </div>
+                <div>
+                  <span><LangText en='Inventory' bn='ইনভেন্টরি' /></span>
+                  <p><LangText en='Stock alerts ready' bn='স্টক অ্যালার্ট রেডি' /></p>
+                </div>
+                <div>
+                  <span><LangText en='Approval' bn='অনুমোদন' /></span>
+                  <p><LangText en='Workflow moving' bn='ওয়ার্কফ্লো চলছে' /></p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -104,7 +104,7 @@ img {
 }
 
 .hero {
-  min-height: 92vh;
+  min-height: 100vh;
   background:
     linear-gradient(180deg, rgba(7, 18, 20, 0.78), rgba(7, 18, 20, 0.86)),
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80") center/cover;
@@ -132,9 +132,9 @@ img {
 }
 
 .nav {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1480px, calc(100% - 16px));
   margin: 0;
-  padding: 10px 12px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,11 +144,18 @@ img {
   left: 50%;
   transform: translateX(-50%);
   z-index: 900;
-  background: rgba(7, 18, 20, 0.72);
-  border: 1px solid rgba(0, 180, 233, 0.2);
+  background: transparent;
+  border: 0;
   border-radius: 8px;
+  backdrop-filter: none;
+  box-shadow: none;
+  transition: background 180ms ease, box-shadow 180ms ease, backdrop-filter 180ms ease, padding 180ms ease;
+}
+
+.pageScrolled .nav {
+  background: rgba(7, 18, 20, 0.78);
   backdrop-filter: blur(16px);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
 }
 
 .brand {
@@ -183,11 +190,13 @@ img {
 }
 
 .navLinks a {
-  opacity: 0.86;
+  color: rgba(255, 255, 255, 0.92);
+  opacity: 1;
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
 }
 
 .navLinks a:hover {
-  opacity: 1;
+  color: var(--cyan);
 }
 
 .navLinks .navDemoButton {
@@ -208,13 +217,13 @@ img {
 }
 
 .heroContent {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1360px, calc(100% - 32px));
   margin: auto;
-  padding: 126px 0 76px;
+  padding: 168px 0 76px;
   position: relative;
   z-index: 2;
   animation: liftIn 700ms ease both;
-  text-align: center;
+  text-align: left;
   display: grid;
   justify-items: center;
 }
@@ -233,11 +242,13 @@ img {
 }
 
 .heroPanel {
-  width: min(940px, 100%);
+  width: min(1320px, 100%);
   position: relative;
-  padding: 42px 38px;
+  padding: 34px;
   display: grid;
-  justify-items: center;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.72fr);
+  gap: 32px;
+  align-items: center;
   border: 1px solid rgba(0, 180, 233, 0.34);
   border-radius: 8px;
   background:
@@ -275,7 +286,7 @@ img {
 .heroChips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -341,9 +352,140 @@ li .bn {
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 14px;
   margin-top: 30px;
+}
+
+.heroStats {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.heroStats strong {
+  min-height: 86px;
+  padding: 16px;
+  display: grid;
+  align-content: end;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(0, 180, 233, 0.22);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 1.55rem;
+}
+
+.heroStats small {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+}
+
+.heroDashboard {
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(0, 180, 233, 0.22), rgba(255, 255, 255, 0.08)),
+    rgba(2, 12, 15, 0.72);
+  border: 1px solid rgba(0, 180, 233, 0.34);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.heroDashboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 180, 233, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 233, 0.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.dashboardTop,
+.dashboardChart,
+.dashboardList {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--white);
+}
+
+.dashboardTop span {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 800;
+}
+
+.dashboardTop strong {
+  color: var(--cyan);
+  font-size: 2.6rem;
+}
+
+.dashboardChart {
+  height: 150px;
+  margin: 22px 0;
+  display: flex;
+  align-items: end;
+  gap: 12px;
+}
+
+.dashboardChart span {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, var(--cyan), rgba(0, 180, 233, 0.16));
+  box-shadow: 0 0 24px rgba(0, 180, 233, 0.2);
+}
+
+.dashboardChart span:nth-child(1) {
+  height: 48%;
+}
+
+.dashboardChart span:nth-child(2) {
+  height: 76%;
+}
+
+.dashboardChart span:nth-child(3) {
+  height: 58%;
+}
+
+.dashboardChart span:nth-child(4) {
+  height: 92%;
+}
+
+.dashboardList {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboardList div {
+  padding: 13px;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 180, 233, 0.22);
+  border-radius: 8px;
+}
+
+.dashboardList span {
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+.dashboardList p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .primaryButton,
@@ -1690,7 +1832,12 @@ p {
   }
 
   .heroPanel {
+    grid-template-columns: 1fr;
     padding: 36px 24px;
+  }
+
+  .heroDashboard {
+    width: 100%;
   }
 
   .intro,
@@ -1792,6 +1939,10 @@ p {
 
   .heroPanel {
     padding: 28px 16px;
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr;
   }
 
   .heroChips {
