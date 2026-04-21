@@ -1,135 +1,227 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import DemoRequest from './DemoRequest';
 import HeaderScrollState from './HeaderScrollState';
 import LanguageToggle from './LanguageToggle';
 import PricingPlans from './PricingPlans';
 
-const modules = [
+const actualModules = [
   {
-    title: 'Finance & Accounting | ফাইন্যান্স',
-    text: 'General ledger, receivables, budgeting, tax, and cash flow stay connected. | হিসাব, বাজেট, ট্যাক্স ও ক্যাশ ফ্লো এক জায়গা থেকে দেখা যায়।',
+    title: 'Dashboard',
+    bn: 'ড্যাশবোর্ড',
+    text: 'Daily collection, expense, profit, receivable, and account balance in one screen.',
   },
   {
-    title: 'Inventory | ইনভেন্টরি',
-    text: 'Stock, purchase orders, warehouses, batches, and reorder rules become visible. | স্টক, অর্ডার, গুদাম ও রি-অর্ডার সহজে ট্র্যাক করা যায়।',
+    title: 'Invoice',
+    bn: 'ইনভয়েস',
+    text: 'Create sales invoices, manage billing flow, and follow payment status.',
   },
   {
-    title: 'Sales & CRM | সেলস ও সিআরএম',
-    text: 'Leads, quotes, orders, customers, and service move through one pipeline. | লিড, কোটেশন, অর্ডার ও কাস্টমার সার্ভিস এক ফ্লোতে চলে।',
+    title: 'Subscription',
+    bn: 'সাবস্ক্রিপশন',
+    text: 'Handle recurring packages, renewals, and customer plan tracking.',
   },
   {
-    title: 'HR & Payroll | এইচআর ও পেরোল',
-    text: 'Employee records, attendance, leave, payroll, and performance become easier. | কর্মী তথ্য, হাজিরা, ছুটি ও বেতন ব্যবস্থাপনা সহজ হয়।',
+    title: 'Quotation',
+    bn: 'কোটেশন',
+    text: 'Prepare proposals quickly and convert approved quotations into invoicing flow.',
   },
   {
-    title: 'Manufacturing | ম্যানুফ্যাকচারিং',
-    text: 'BOM, production planning, work orders, costing, and quality checks stay aligned. | উৎপাদন পরিকল্পনা, কস্টিং ও কোয়ালিটি কন্ট্রোল যুক্ত থাকে।',
+    title: 'Money Receipt',
+    bn: 'মানি রিসিপ্ট',
+    text: 'Record received payments with proper reference and collection history.',
   },
   {
-    title: 'Supply Chain | সাপ্লাই চেইন',
-    text: 'Procurement, vendors, logistics, demand, and deliveries become measurable. | ক্রয়, ভেন্ডর, ডেলিভারি ও লজিস্টিকস সমন্বিত হয়।',
-  },
-];
-
-const benefits = [
-  'One source of truth for business data | ব্যবসার সব ডেটার একটি নির্ভরযোগ্য উৎস',
-  'Less duplicate entry and fewer manual errors | ডুপ্লিকেট এন্ট্রি ও ভুল কমে যায়',
-  'Faster month-end closing and reporting | রিপোর্টিং ও মাস শেষে হিসাব দ্রুত হয়',
-  'Clear inventory, order, and production visibility | স্টক, অর্ডার ও উৎপাদন পরিষ্কার দেখা যায়',
-  'Better compliance, audit trails, and approvals | অনুমোদন, অডিট ও কমপ্লায়েন্স শক্তিশালী হয়',
-  'Scalable processes as the company grows | ব্যবসা বড় হলে প্রসেসও সহজে স্কেল করে',
-];
-
-const steps = [
-  'Map current process and pain points | বর্তমান প্রসেস ও সমস্যা ম্যাপ করুন',
-  'Define modules, users, reports, and integrations | মডিউল, ইউজার, রিপোর্ট ও ইন্টিগ্রেশন ঠিক করুন',
-  'Clean and migrate master data | ডেটা পরিষ্কার করে মাইগ্রেট করুন',
-  'Configure workflows, permissions, and approvals | ওয়ার্কফ্লো, পারমিশন ও অনুমোদন সেট করুন',
-  'Train teams with real scenarios | বাস্তব কাজ দিয়ে টিমকে ট্রেনিং দিন',
-  'Go live in phases and improve continuously | ধাপে ধাপে লাইভ করে নিয়মিত উন্নতি করুন',
-];
-
-const kpis = [
-  {
-    value: '30-50%',
-    label: 'manual work reduction target | ম্যানুয়াল কাজ কমানোর লক্ষ্য',
-  },
-  { value: '24/7', label: 'shared data access | সব সময় ডেটা অ্যাক্সেস' },
-  {
-    value: '1 view',
-    label: 'finance, stock, sales, delivery | এক ভিউতে সব অপারেশন',
+    title: 'Accounts',
+    bn: 'অ্যাকাউন্টস',
+    text: 'Maintain branch-wise accounts, receivables, and balance monitoring.',
   },
   {
-    value: 'Weeks',
-    label: 'saved through automated reports | রিপোর্ট অটোমেশনে সময় বাঁচে',
-  },
-];
-
-const industries = [
-  {
-    title: 'Retail & Ecommerce | রিটেইল ও ই-কমার্স',
-    text: 'Unify POS, online orders, stock, returns, customer data, and finance. | POS, অনলাইন অর্ডার, স্টক, রিটার্ন, কাস্টমার ডেটা ও ফাইন্যান্স একসাথে করুন।',
+    title: 'Client',
+    bn: 'ক্লায়েন্ট',
+    text: 'Track total, active, inactive, and account-linked client information.',
   },
   {
-    title: 'Manufacturing | ম্যানুফ্যাকচারিং',
-    text: 'Control production plans, raw materials, machine usage, quality, and costing. | উৎপাদন পরিকল্পনা, কাঁচামাল, মেশিন ব্যবহার, কোয়ালিটি ও কস্টিং নিয়ন্ত্রণ করুন।',
+    title: 'Cheque Management',
+    bn: 'চেক ম্যানেজমেন্ট',
+    text: 'Manage cheque issue, deposit, clearance, and status updates.',
   },
   {
-    title: 'Distribution | ডিস্ট্রিবিউশন',
-    text: 'Track warehouses, delivery routes, purchase cycles, sales teams, and collections. | গুদাম, ডেলিভারি রুট, ক্রয় চক্র, সেলস টিম ও কালেকশন ট্র্যাক করুন।',
+    title: 'Loan Investment',
+    bn: 'লোন ইনভেস্টমেন্ট',
+    text: 'Monitor investments, loan entries, and recovery movement from one place.',
   },
   {
-    title: 'Service Business | সার্ভিস বিজনেস',
-    text: 'Manage projects, support tickets, billing, resources, contracts, and customer history. | প্রজেক্ট, সাপোর্ট টিকেট, বিলিং, রিসোর্স, কন্ট্রাক্ট ও কাস্টমার হিস্ট্রি ম্যানেজ করুন।',
+    title: 'Expense',
+    bn: 'খরচ',
+    text: 'Control operational expense entries and compare them with collections.',
+  },
+  {
+    title: 'Payroll',
+    bn: 'পেরোল',
+    text: 'Organize staff salary, pay cycle, and related finance records.',
+  },
+  {
+    title: 'Configuration',
+    bn: 'কনফিগারেশন',
+    text: 'Set up branches, permissions, master data, and workflow defaults.',
+  },
+  {
+    title: 'Report',
+    bn: 'রিপোর্ট',
+    text: 'Generate summary, performance, collection, expense, and account reports.',
+  },
+  {
+    title: 'Administration',
+    bn: 'অ্যাডমিনিস্ট্রেশন',
+    text: 'Control users, roles, approvals, and secure system-wide management.',
   },
 ];
 
-const comparisons = [
+const solutionOutcomes = [
   {
-    before: 'Manual spreadsheet updates | ম্যানুয়াল স্প্রেডশিট আপডেট',
-    after:
-      'Live dashboards and automated reports | লাইভ ড্যাশবোর্ড ও অটোমেটেড রিপোর্ট',
+    title: 'Faster Collection Control',
+    bn: 'দ্রুত কালেকশন কন্ট্রোল',
+    text: 'See what is collected, what is pending, and where follow-up is needed without checking multiple places.',
   },
   {
-    before:
-      'Separate finance, sales, and stock data | ফাইন্যান্স, সেলস ও স্টক আলাদা ডেটা',
-    after:
-      'One connected operational database | একটি কানেক্টেড অপারেশনাল ডেটাবেস',
+    title: 'Clear Client Tracking',
+    bn: 'পরিষ্কার ক্লায়েন্ট ট্র্যাকিং',
+    text: 'Keep client status, active accounts, and payment relationships visible in one connected flow.',
   },
   {
-    before:
-      'Slow approvals and unclear responsibility | ধীর অনুমোদন ও অস্পষ্ট দায়িত্ব',
-    after: 'Workflow rules with audit trails | অডিট ট্রেইলসহ ওয়ার্কফ্লো রুল',
+    title: 'Daily Financial Clarity',
+    bn: 'দৈনিক ফিন্যান্স ক্ল্যারিটি',
+    text: 'Understand expense, profit, and due position every day so decisions can be made faster.',
   },
   {
-    before: 'Decisions based on old information | পুরোনো তথ্যের ওপর সিদ্ধান্ত',
-    after:
-      'Real-time visibility for managers | ম্যানেজারদের জন্য রিয়েল-টাইম ভিজিবিলিটি',
+    title: 'Better Team Coordination',
+    bn: 'ভালো টিম কো-অর্ডিনেশন',
+    text: 'Billing, receipt, accounts, and reporting stay aligned so teams work from the same information.',
+  },
+  {
+    title: 'Stronger Management View',
+    bn: 'শক্তিশালী ম্যানেজমেন্ট ভিউ',
+    text: 'Give owners and managers a clean dashboard view of business performance, client movement, and collection progress.',
+  },
+  {
+    title: 'Less Manual Confusion',
+    bn: 'কম ম্যানুয়াল কনফিউশন',
+    text: 'Reduce spreadsheet dependency and make routine business tracking easier for every day operations.',
   },
 ];
 
-const faqs = [
+const dashboardStats = [
+  { value: '20+', en: 'Core modules', bn: 'মূল মডিউল' },
+
+  { value: '24/7', en: 'Branch visibility', bn: 'ব্রাঞ্চ ভিজিবিলিটি' },
+  { value: 'Live', en: 'Receivable insights', bn: 'লাইভ রিসিভেবল ইনসাইট' },
+];
+
+const summaryCards = [
   {
-    question: 'Who needs ERP? | কার ERP দরকার?',
-    answer:
-      'Any growing company that manages orders, inventory, people, finance, approvals, or multiple branches can benefit from ERP. | যে ব্যবসায় অর্ডার, স্টক, কর্মী, হিসাব, অনুমোদন বা একাধিক ব্রাঞ্চ আছে, তাদের ERP দরকার হতে পারে।',
+    title: 'Today Collection',
+    bn: 'আজকের কালেকশন',
+    value: 'Collections tracked instantly',
   },
   {
-    question:
-      'Is ERP only for large companies? | ERP কি শুধু বড় কোম্পানির জন্য?',
-    answer:
-      'No. Small and medium businesses can start with core modules and scale gradually. | না। ছোট ও মাঝারি ব্যবসা প্রয়োজনীয় মডিউল দিয়ে শুরু করে ধীরে ধীরে স্কেল করতে পারে।',
+    title: 'Today Expenses',
+    bn: 'আজকের খরচ',
+    value: 'Expense decisions stay visible',
   },
   {
-    question: 'How long does implementation take? | ইমপ্লিমেন্টেশন কতদিন লাগে?',
-    answer:
-      'It depends on modules, data quality, integrations, and training scope. A phased rollout is usually safer. | মডিউল, ডেটা, ইন্টিগ্রেশন ও ট্রেনিংয়ের ওপর সময় নির্ভর করে। ধাপে ধাপে লাইভ করা সাধারণত নিরাপদ।',
+    title: 'Today Profit',
+    bn: 'আজকের লাভ',
+    value: 'Profit can be compared daily',
   },
   {
-    question:
-      'What should be prepared before ERP? | ERP শুরুর আগে কী প্রস্তুতি দরকার?',
-    answer:
-      'Document processes, clean master data, define approval rules, and assign owners for each department. | প্রসেস ডকুমেন্ট, মাস্টার ডেটা পরিষ্কার, অনুমোদন রুল এবং প্রতিটি বিভাগের দায়িত্বশীল ব্যক্তি ঠিক করুন।',
+    title: 'Total Receivable',
+    bn: 'মোট রিসিভেবল',
+    value: 'Outstanding amount remains measurable',
+  },
+];
+
+const workflows = [
+  {
+    title: 'Sales to Billing',
+    bn: 'সেলস থেকে বিলিং',
+    text: 'Quotation, invoice, subscription, and money receipt stay connected so your billing cycle does not break.',
+  },
+  {
+    title: 'Client to Collection',
+    bn: 'ক্লায়েন্ট থেকে কালেকশন',
+    text: 'Client profile, receivable view, and receipt history help your team follow every payment clearly.',
+  },
+  {
+    title: 'Expense to Profit',
+    bn: 'খরচ থেকে লাভ',
+    text: 'Expense entries and collection data show daily and monthly profitability from the same operational layer.',
+  },
+  {
+    title: 'Accounts to Reporting',
+    bn: 'অ্যাকাউন্টস থেকে রিপোর্টিং',
+    text: 'Account balance, branch records, cheque movement, and reports stay ready for management review.',
+  },
+];
+
+const journeySteps = [
+  {
+    label: '01',
+    title: 'Capture Demand',
+    bn: 'চাহিদা ধরুন',
+    text: 'Start with quotation and subscription so the sales conversation moves into a structured ERP process.',
+    image:
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    label: '02',
+    title: 'Bill and Receive',
+    bn: 'বিলিং ও রিসিভ',
+    text: 'Invoice and money receipt work together to make every collection event visible inside the same system.',
+    image:
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    label: '03',
+    title: 'Review Operations',
+    bn: 'অপারেশন রিভিউ',
+    text: 'Accounts, expense, cheque management, and reports give management a clean control layer.',
+    image:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+  },
+];
+
+const reportBlocks = [
+  {
+    title: 'Collection Snapshot',
+    bn: 'কালেকশন স্ন্যাপশট',
+    text: 'Inspired by your existing right-side cards, this section highlights today and this month at a glance.',
+  },
+  {
+    title: 'Balance Status',
+    bn: 'ব্যালেন্স স্ট্যাটাস',
+    text: 'Branch account names, account numbers, and balance conditions can be introduced like the real ERP table.',
+  },
+  {
+    title: 'Client Summary',
+    bn: 'ক্লায়েন্ট সামারি',
+    text: 'Total, active, and inactive client counts communicate growth without inventing unrelated modules.',
+  },
+];
+
+const showcasePanels = [
+  {
+    title: 'Client and Collection Experience',
+    bn: 'ক্লায়েন্ট ও কালেকশন এক্সপেরিয়েন্স',
+    text: 'Give visitors a clean visual story of how client records, outstanding receivables, and money receipts stay connected.',
+    image:
+      'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80',
+  },
+  {
+    title: 'Accounts and Reporting View',
+    bn: 'অ্যাকাউন্টস ও রিপোর্টিং ভিউ',
+    text: 'Use report-style panels and account summaries to present the software as a practical finance control center.',
+    image:
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
   },
 ];
 
@@ -142,15 +234,9 @@ function LangText({ en, bn }: { en: string; bn: string }) {
   );
 }
 
-function PipeText({ text }: { text: string }) {
-  const [en, bn = en] = text.split(' | ');
-
-  return <LangText en={en} bn={bn} />;
-}
-
 export default function Home() {
   return (
-    <main>
+    <main className='erpLanding'>
       <HeaderScrollState />
       <a
         className='floatingDemoButton'
@@ -160,7 +246,7 @@ export default function Home() {
         <LangText en='Request Demo' bn='ডেমো চাই' />
       </a>
 
-      <header className='hero' id='top'>
+      <header className='hero erpHero' id='top'>
         <nav className='nav' aria-label='Main navigation'>
           <a className='brand' href='#top'>
             <Image
@@ -185,14 +271,14 @@ export default function Home() {
             <a href='#modules'>
               <LangText en='Modules' bn='মডিউল' />
             </a>
-            <a href='#benefits'>
-              <LangText en='Benefits' bn='সুবিধা' />
+            <a href='#dashboard-view'>
+              <LangText en='Dashboard View' bn='ড্যাশবোর্ড ভিউ' />
             </a>
-            <a href='#implementation'>
-              <LangText en='Implementation' bn='বাস্তবায়ন' />
+            <a href='#workflow'>
+              <LangText en='Workflow' bn='ওয়ার্কফ্লো' />
             </a>
-            <a href='#selection'>
-              <LangText en='Selection' bn='নির্বাচন' />
+            <a href='#reports'>
+              <LangText en='Reports' bn='রিপোর্ট' />
             </a>
             <a href='#pricing'>
               <LangText en='Pricing' bn='প্রাইসিং' />
@@ -204,599 +290,511 @@ export default function Home() {
           <LanguageToggle />
         </nav>
 
-        <section className='heroContent'>
-          <div className='heroPanel'>
+        <section className='heroContent erpHeroContent'>
+          <div className='heroPanel erpHeroPanel'>
             <div className='heroCopy'>
-              <div className='heroChips' aria-label='ERP highlights'>
+              <div className='heroChips' aria-label='Actual ERP highlights'>
                 <span>
-                  <LangText en='Real-time data' bn='রিয়েল-টাইম ডেটা' />
+                  <LangText
+                    en='Actual module-based design'
+                    bn='রিয়েল মডিউল-বেসড ডিজাইন'
+                  />
                 </span>
                 <span>
-                  <LangText en='Smart workflows' bn='স্মার্ট ওয়ার্কফ্লো' />
+                  <LangText
+                    en='Collection and account focused'
+                    bn='কালেকশন ও অ্যাকাউন্ট ফোকাসড'
+                  />
                 </span>
                 <span>
-                  <LangText en='Connected teams' bn='কানেক্টেড টিম' />
+                  <LangText
+                    en='Admin-ready workflows'
+                    bn='অ্যাডমিন-রেডি ওয়ার্কফ্লো'
+                  />
                 </span>
               </div>
               <p className='eyebrow'>
                 <LangText
-                  en='Enterprise Resource Planning'
-                  bn='ইআরপি সফটওয়্যার'
+                  en='ERP Informative Website'
+                  bn='ইআরপি ইনফরমেটিভ ওয়েবসাইট'
                 />
               </p>
               <h1>
                 <LangText
-                  en='Run finance, people, inventory, sales, and operations from one connected system.'
-                  bn='ফাইন্যান্স, ইনভেন্টরি, সেলস, এইচআর ও অপারেশন এক স্মার্ট সিস্টেমে চালান।'
+                  en='One smart ERP solution for collection, accounts, clients, and daily business control.'
+                  bn='collection, accounts, client আর daily business control-এর জন্য এক smart ERP solution।'
                 />
               </h1>
               <p className='heroText'>
                 <LangText
-                  en='ERP gives growing companies a single operational backbone. It replaces scattered spreadsheets and disconnected software with shared data, controlled workflows, and real-time decisions.'
-                  bn='ERP ব্যবসার সব ডেটা, অনুমোদন ও রিপোর্টকে এক জায়গায় এনে দ্রুত সিদ্ধান্ত নিতে সাহায্য করে।'
+                  en='This landing design is now based on your actual dashboard structure: collection, expense, profit, receivable, client summary, account balance, and the exact modules shown in your ERP sidebar.'
+                  bn='এই landing design এখন আপনার আসল dashboard structure অনুযায়ী সাজানো: collection, expense, profit, receivable, client summary, account balance, আর sidebar-এ থাকা exact module list.'
                 />
               </p>
               <div className='heroActions'>
-                <a className='primaryButton' href='#demo'>
-                  <LangText en='Request demo' bn='ডেমো চাই' />
+                <a className='primaryButton' href='#modules'>
+                  <LangText en='Explore modules' bn='মডিউল দেখুন' />
                 </a>
-                <a className='secondaryButton' href='#selection'>
-                  <LangText en='Choose wisely' bn='সঠিকভাবে বাছাই করুন' />
-                </a>
-                <a className='secondaryButton' href='#modules'>
-                  <LangText en='Explore ERP' bn='ERP দেখুন' />
+                <a className='secondaryButton' href='#demo'>
+                  <LangText en='Book live demo' bn='লাইভ ডেমো বুক করুন' />
                 </a>
               </div>
-              <div className='heroStats' aria-label='ERP impact highlights'>
-                <strong>
-                  360°{' '}
-                  <small>
-                    <LangText en='Business View' bn='বিজনেস ভিউ' />
-                  </small>
-                </strong>
-                <strong>
-                  40+{' '}
-                  <small>
-                    <LangText en='ERP Modules' bn='ERP মডিউল' />
-                  </small>
-                </strong>
-                <strong>
-                  24/7{' '}
-                  <small>
-                    <LangText en='Data Access' bn='ডেটা অ্যাক্সেস' />
-                  </small>
-                </strong>
+              <div className='heroStats'>
+                {dashboardStats.map((item) => (
+                  <strong key={item.en}>
+                    {item.value}
+                    <small>
+                      <LangText en={item.en} bn={item.bn} />
+                    </small>
+                  </strong>
+                ))}
               </div>
             </div>
 
-            <div className='heroDashboard' aria-label='ERP dashboard preview'>
-              <div className='dashboardTop'>
-                <span>
-                  <LangText en='Live ERP Control' bn='লাইভ ERP কন্ট্রোল' />
-                </span>
-                <strong>98%</strong>
-              </div>
-              <div className='dashboardChart' aria-hidden='true'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div className='dashboardList'>
-                <div>
-                  <span>
-                    <LangText en='Finance' bn='ফাইন্যান্স' />
-                  </span>
-                  <p>
-                    <LangText en='Cash flow synced' bn='ক্যাশ ফ্লো সিঙ্কড' />
-                  </p>
+            <aside
+              className='heroDashboard erpDashboardPreview'
+              aria-label='Actual ERP dashboard inspired preview'
+            >
+              <div className='laptopMockup'>
+                <div className='laptopScreen'>
+                  <div className='laptopCamera' aria-hidden='true'></div>
+                  <div className='erpPreviewTop'>
+                    <div className='erpMainMock'>
+                      <div className='erpTopStrip'>
+                        <div className='erpTopDots' aria-hidden='true'>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <strong>ERP</strong>
+                      </div>
+                      <div className='erpChartMock' aria-hidden='true'>
+                        <span className='short'></span>
+                        <span className='empty'></span>
+                        <span className='empty'></span>
+                        <span className='tall'></span>
+                        <span className='empty'></span>
+                      </div>
+                    </div>
+                    <div className='erpDailyCards'>
+                      {summaryCards.slice(0, 3).map((card) => (
+                        <div
+                          key={card.title}
+                          className={`erpMetricCard ${card.title === 'Today Collection' ? 'erpMetricCardPrimary' : ''}`}
+                        >
+                          <h3>
+                            <LangText en={card.title} bn={card.bn} />
+                          </h3>
+                          <strong>
+                            {card.title === 'Today Collection' ? '24,500' : '0.00'}
+                          </strong>
+                        </div>
+                      ))}
+                      <div className='erpCompactPanel'>
+                        <p className='erpCompactTitle'>
+                          <LangText en='Active Modules' bn='অ্যাকটিভ মডিউল' />
+                        </p>
+                        <div className='erpModulePills'>
+                          <span>Invoice</span>
+                          <span>Receipt</span>
+                          <span>Accounts</span>
+                          <span>Client</span>
+                        </div>
+                        <div className='erpRecentList'>
+                          <div>
+                            <strong>INV-2045</strong>
+                            <span>Collected</span>
+                          </div>
+                          <div>
+                            <strong>CL-27</strong>
+                            <span>Active</span>
+                          </div>
+                          <div>
+                            <strong>Due Alert</strong>
+                            <span>1 follow-up</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='erpSummaryStack erpMonthlyCards'>
+                    <div className='erpMetricCard wide'>
+                      <h3>
+                        <LangText en='Month' bn='মাস' />
+                      </h3>
+                      <strong>1000.00 BDT</strong>
+                    </div>
+                    <div className='erpMetricCard wide'>
+                      <h3>
+                        <LangText en='Received' bn='রিসিভড' />
+                      </h3>
+                      <strong>1000.00 BDT</strong>
+                    </div>
+                    <div className='erpMetricCard wide'>
+                      <h3>
+                        <LangText en='Pending' bn='পেন্ডিং' />
+                      </h3>
+                      <strong>0.00 BDT</strong>
+                    </div>
+                    <div className='erpMetricCard wide'>
+                      <h3>
+                        <LangText en='Total Due' bn='মোট ডিউ' />
+                      </h3>
+                      <strong>18460267.00 BDT</strong>
+                    </div>
+                  </div>
+                  <div className='erpPreviewBottom compactBottom'>
+                    <div className='clientStatsPanel heroClientStats heroClientStatsWide'>
+                      <article>
+                        <small>
+                          <LangText en='Total Client' bn='মোট ক্লায়েন্ট' />
+                        </small>
+                        <strong>27</strong>
+                      </article>
+                      <article>
+                        <small>
+                          <LangText
+                            en='Active Client'
+                            bn='অ্যাকটিভ ক্লায়েন্ট'
+                          />
+                        </small>
+                        <strong>26</strong>
+                      </article>
+                      <article>
+                        <small>
+                          <LangText
+                            en='Inactive Client'
+                            bn='ইনঅ্যাকটিভ ক্লায়েন্ট'
+                          />
+                        </small>
+                        <strong>01</strong>
+                      </article>
+                    </div>
+                    <div className='erpStatusBar'>
+                      <div>
+                        <span>Collection</span>
+                        <strong>On Track</strong>
+                      </div>
+                      <div>
+                        <span>Receivable</span>
+                        <strong>Watch</strong>
+                      </div>
+                      <div>
+                        <span>Branches</span>
+                        <strong>Live</strong>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <span>
-                    <LangText en='Inventory' bn='ইনভেন্টরি' />
-                  </span>
-                  <p>
-                    <LangText
-                      en='Stock alerts ready'
-                      bn='স্টক অ্যালার্ট রেডি'
-                    />
-                  </p>
-                </div>
-                <div>
-                  <span>
-                    <LangText en='Approval' bn='অনুমোদন' />
-                  </span>
-                  <p>
-                    <LangText en='Workflow moving' bn='ওয়ার্কফ্লো চলছে' />
-                  </p>
-                </div>
               </div>
-            </div>
+              {/* <div className='laptopBase' aria-hidden='true'></div> */}
+            </aside>
           </div>
         </section>
       </header>
 
-      <section className='intro sectionBand animatedSection'>
-        <div>
-          <p className='eyebrow'>
-            <LangText en='What ERP Means' bn='ERP কী' />
-          </p>
-          <h2>
-            <LangText
-              en='ERP is the nervous system of a company.'
-              bn='ERP হলো একটি প্রতিষ্ঠানের ডিজিটাল নার্ভ সিস্টেম।'
-            />
-          </h2>
-        </div>
-        <p>
-          <LangText
-            en='Every department creates data. ERP connects that data so a sale can update inventory, trigger procurement, affect cash flow, inform production, and appear in management reports without five separate manual updates.'
-            bn='প্রতিটি বিভাগের ডেটা ERP একসাথে যুক্ত করে, তাই সেলস, স্টক, ক্রয়, উৎপাদন ও রিপোর্ট একসাথে আপডেট হয়।'
-          />
-        </p>
-      </section>
-
-      <section className='visualSplit animatedSection'>
-        <Image
-          src='https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80'
-          alt='Team reviewing business planning data together'
-          width={1400}
-          height={930}
-        />
-        <div className='splitContent'>
-          <p className='eyebrow'>
-            <LangText en='Why It Matters' bn='কেন দরকার' />
-          </p>
-          <h2>
-            <LangText
-              en='Disconnected tools slow down decisions.'
-              bn='আলাদা আলাদা টুল সিদ্ধান্ত নেওয়া ধীর করে।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='Without ERP, teams often argue over whose spreadsheet is correct. With ERP, leaders can see orders, costs, stock, receivables, delivery status, and employee activity through the same trusted data model.'
-              bn='ERP থাকলে অর্ডার, খরচ, স্টক, পাওনা, ডেলিভারি ও টিম অ্যাক্টিভিটি একই ডেটা থেকে দেখা যায়।'
-            />
-          </p>
-          <div className='proofGrid'>
-            {kpis.map((item) => (
-              <div className='proofItem' key={item.label}>
-                <strong>{item.value}</strong>
-                <span>
-                  <PipeText text={item.label} />
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className='sectionWrap animatedSection' id='modules'>
-        <div className='sectionHead'>
-          <p className='eyebrow'>
-            <LangText en='Core ERP Modules' bn='প্রধান ERP মডিউল' />
-          </p>
-          <h2>
-            <LangText
-              en='Choose modules by business process, not buzzwords.'
-              bn='বাজওয়ার্ড নয়, আপনার কাজের প্রসেস অনুযায়ী মডিউল বেছে নিন।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='The best ERP setup starts with the work people actually do every day. These modules usually form the foundation.'
-              bn='ভালো ERP সেটআপ শুরু হয় আপনার টিম প্রতিদিন যে কাজ করে সেই বাস্তব প্রসেস থেকে।'
-            />
-          </p>
-        </div>
-        <div className='moduleGrid'>
-          {modules.map((module, index) => (
-            <article className='moduleCard' key={module.title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>
-                <PipeText text={module.title} />
-              </h3>
-              <p>
-                <PipeText text={module.text} />
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className='benefits animatedSection' id='benefits'>
-        <div className='benefitImage'>
-          <Image
-            src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
-            alt='Analytics dashboard on a laptop'
-            width={1200}
-            height={800}
-          />
-        </div>
-        <div className='benefitContent'>
-          <p className='eyebrow'>
-            <LangText en='Business Benefits' bn='ব্যবসায়িক সুবিধা' />
-          </p>
-          <h2>
-            <LangText
-              en='ERP turns daily activity into usable intelligence.'
-              bn='ERP দৈনন্দিন কাজকে ব্যবহারযোগ্য বিজনেস ইনসাইটে বদলে দেয়।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='A well-implemented ERP does more than store transactions. It creates accountability, shortens handoffs, and helps teams understand the impact of each decision.'
-              bn='ভালোভাবে ইমপ্লিমেন্ট করা ERP শুধু ডেটা রাখে না, দায়িত্ব, গতি ও সিদ্ধান্তের প্রভাবও পরিষ্কার করে।'
-            />
-          </p>
-          <ul className='checkList'>
-            {benefits.map((benefit) => (
-              <li key={benefit}>
-                <PipeText text={benefit} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section
-        className='reportShowcase sectionWrap animatedSection'
-        id='reports'
+        className='sectionWrap actualModuleSection animatedSection'
+        id='modules'
       >
-        <div className='reportIntro'>
-          <div>
+        <div className='actualModuleShowcase'>
+          <div className='actualModuleHero actualModuleHeroClean'>
             <p className='eyebrow'>
-              <LangText en='Reports & Analytics' bn='রিপোর্ট ও অ্যানালিটিক্স' />
+              <LangText en='What You Actually Get' bn='আপনি আসলে কী পাবেন' />
             </p>
             <h2>
               <LangText
-                en='See the full business picture before decisions get expensive.'
-                bn='সিদ্ধান্ত ব্যয়বহুল হওয়ার আগেই পুরো ব্যবসার ছবি দেখুন।'
+                en='A clearer way to monitor revenue flow, customer activity, finance records, and everyday operations.'
+                bn='revenue flow, customer activity, finance record আর everyday operation monitor করার জন্য আরও পরিষ্কার একটি way।'
               />
             </h2>
-          </div>
-          <p>
-            <LangText
-              en='ERP reports turn finance, inventory, sales, HR, and operations data into clear dashboards, trend lines, and decision-ready summaries.'
-              bn='ERP রিপোর্ট ফাইন্যান্স, ইনভেন্টরি, সেলস, HR ও অপারেশন ডেটাকে পরিষ্কার ড্যাশবোর্ড, ট্রেন্ডলাইন ও সিদ্ধান্তের উপযোগী সারাংশে বদলে দেয়।'
-            />
-          </p>
-        </div>
-
-        <div className='reportGrid'>
-          <article className='reportCard reportLineCard'>
-            <div className='reportCardVisual'>
-              <div className='reportChartGrid'></div>
-              <svg viewBox='0 0 520 220' aria-hidden='true'>
-                <polyline points='0,145 48,178 96,100 148,52 202,132 268,56 330,165 398,92 464,156 520,114' />
-              </svg>
-              <span className='chartTag tagOne'>+32%</span>
-              <span className='chartTag tagTwo'>Live</span>
-            </div>
-            <div className='reportCardBody'>
-              <span className='reportNumber'>01</span>
-              <h3>
-                <LangText en='Real-time Reporting' bn='রিয়েল-টাইম রিপোর্টিং' />
-              </h3>
-              <p>
-                <LangText
-                  en='Track sales, cash flow, stock movement, and approvals from one live reporting view.'
-                  bn='একটি লাইভ রিপোর্টিং ভিউ থেকে সেলস, ক্যাশ ফ্লো, স্টক মুভমেন্ট ও অনুমোদন ট্র্যাক করুন।'
-                />
-              </p>
-            </div>
-          </article>
-
-          <article className='reportCard reportDonutCard'>
-            <div className='reportCardVisual'>
-              <div className='donutChart'>
-                <span></span>
-              </div>
-              <div className='donutLegend'>
-                <span>
-                  <i></i> Finance 42%
-                </span>
-                <span>
-                  <i></i> Sales 31%
-                </span>
-                <span>
-                  <i></i> Stock 27%
-                </span>
-              </div>
-            </div>
-            <div className='reportCardBody'>
-              <span className='reportNumber'>02</span>
-              <h3>
-                <LangText
-                  en='Management Dashboards'
-                  bn='ম্যানেজমেন্ট ড্যাশবোর্ড'
-                />
-              </h3>
-              <p>
-                <LangText
-                  en='Give leaders a clean command view with KPIs, department summaries, and branch performance.'
-                  bn='KPI, ডিপার্টমেন্ট সামারি ও ব্রাঞ্চ পারফরম্যান্সসহ লিডারদের জন্য পরিষ্কার কমান্ড ভিউ দিন।'
-                />
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className='industryShowcase sectionWrap animatedSection'>
-        <div className='sectionHead'>
-          <p className='eyebrow'>
-            <LangText en='ERP By Industry' bn='ইন্ডাস্ট্রি অনুযায়ী ERP' />
-          </p>
-          <h2>
-            <LangText
-              en='Different businesses need different ERP priorities.'
-              bn='ভিন্ন ব্যবসার ERP প্রয়োজনও ভিন্ন হয়।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='A strong ERP website should help visitors imagine their own business inside the system.'
-              bn='ভালো ERP সাইট ভিজিটরকে নিজের ব্যবসার প্রসেস ERP-র ভেতরে কল্পনা করতে সাহায্য করে।'
-            />
-          </p>
-        </div>
-        <div className='industryGrid'>
-          {industries.map((industry) => (
-            <article className='industryCard' key={industry.title}>
-              <h3>
-                <PipeText text={industry.title} />
-              </h3>
-              <p>
-                <PipeText text={industry.text} />
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section
-        className='implementation sectionWrap animatedSection'
-        id='implementation'
-      >
-        <div className='sectionHead'>
-          <p className='eyebrow'>
-            <LangText en='Implementation Roadmap' bn='বাস্তবায়ন পরিকল্পনা' />
-          </p>
-          <h2>
-            <LangText
-              en='A successful ERP launch is a business change project.'
-              bn='সফল ERP লঞ্চ আসলে একটি বিজনেস চেঞ্জ প্রজেক্ট।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='Software matters, but process ownership, clean data, training, and leadership support usually decide whether the project succeeds.'
-              bn='সফটওয়্যার গুরুত্বপূর্ণ, কিন্তু পরিষ্কার ডেটা, ট্রেনিং ও নেতৃত্বের সাপোর্ট সফলতা ঠিক করে।'
-            />
-          </p>
-        </div>
-        <div className='timeline'>
-          {steps.map((step, index) => (
-            <div className='timelineItem' key={step}>
-              <span>{index + 1}</span>
-              <p>
-                <PipeText text={step} />
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className='comparisonBand animatedSection'>
-        <div className='comparisonInner'>
-          <div className='sectionHead'>
-            <p className='eyebrow'>
-              <LangText en='Before vs After ERP' bn='ERP আগে ও পরে' />
-            </p>
-            <h2>
+            <p>
               <LangText
-                en='ERP replaces scattered work with controlled intelligence.'
-                bn='ERP ছড়ানো-ছিটানো কাজকে নিয়ন্ত্রিত ইন্টেলিজেন্সে বদলে দেয়।'
+                en='Every part of the business stays easier to track, easier to follow up, and easier to manage from one connected flow.'
+                bn='business-er প্রতিটি part এক connected flow-তে track করা, follow-up করা আর manage করা সহজ হয়ে যায়।'
               />
-            </h2>
+            </p>
+            <div className='actualModuleMiniStats'>
+              <span>
+                <strong>Daily</strong>
+                <small>control</small>
+              </span>
+              <span>
+                <strong>Client</strong>
+                <small>visibility</small>
+              </span>
+              <span>
+                <strong>Faster</strong>
+                <small>follow-up</small>
+              </span>
+            </div>
           </div>
-          <div className='comparisonGrid'>
-            {comparisons.map((item) => (
-              <article className='comparisonRow' key={item.before}>
-                <div>
-                  <strong>
-                    <LangText en='Before' bn='আগে' />
-                  </strong>
-                  <p>
-                    <PipeText text={item.before} />
-                  </p>
-                </div>
-                <span aria-hidden='true'>→</span>
-                <div>
-                  <strong>
-                    <LangText en='After ERP' bn='ERP পরে' />
-                  </strong>
-                  <p>
-                    <PipeText text={item.after} />
-                  </p>
-                </div>
+
+          <div className='actualModuleGrid'>
+            {solutionOutcomes.map((item, index) => (
+              <article className='actualModuleCard' key={item.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>
+                  <LangText en={item.title} bn={item.bn} />
+                </h3>
+                <p>
+                  <LangText en={item.text} bn={item.text} />
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className='operationsPanel animatedSection'>
-        <Image
-          src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=80'
-          alt='Warehouse operations with organized storage aisles'
-          width={1500}
-          height={1000}
-        />
-        <div className='operationsText'>
-          <p className='eyebrow'>
-            <LangText en='ERP In Action' bn='বাস্তবে ERP' />
-          </p>
-          <h2>
-            <LangText
-              en='From customer order to warehouse dispatch, every step stays traceable.'
-              bn='কাস্টমার অর্ডার থেকে ডেলিভারি পর্যন্ত প্রতিটি ধাপ ট্র্যাক করা যায়।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='Sales confirms demand, inventory reserves stock, procurement fills shortages, finance checks payment, and logistics prepares delivery. ERP makes that chain visible before problems become expensive.'
-              bn='সেলস, স্টক, ক্রয়, ফাইন্যান্স ও লজিস্টিকস একসাথে কাজ করে, তাই সমস্যা বড় হওয়ার আগেই দেখা যায়।'
-            />
-          </p>
-        </div>
-      </section>
-
-      <section className='intelligenceLayer sectionWrap animatedSection'>
-        <div>
-          <p className='eyebrow'>
-            <LangText en='ERP Intelligence Layer' bn='ERP ইন্টেলিজেন্স লেয়ার' />
-          </p>
-          <h2>
-            <LangText
-              en='Make every department visible through one digital command center.'
-              bn='একটি ডিজিটাল কমান্ড সেন্টার থেকে প্রতিটি বিভাগকে দৃশ্যমান করুন।'
-            />
-          </h2>
-          <p>
-            <LangText
-              en='Dashboards, alerts, approvals, audit trails, and role-based access help leaders understand what is happening before it becomes a problem.'
-              bn='ড্যাশবোর্ড, অ্যালার্ট, অনুমোদন, অডিট ট্রেইল ও রোল-বেইজড অ্যাক্সেস সমস্যা বড় হওয়ার আগেই বুঝতে সাহায্য করে।'
-            />
-          </p>
-        </div>
-        <div className='commandGrid'>
-          <div className='commandHeader'>
-            <span>
-              <LangText en='Command Center' bn='কমান্ড সেন্টার' />
-            </span>
-            <strong>98%</strong>
-          </div>
-          <div className='commandPulse' aria-hidden='true'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <span>
-            <LangText en='Live KPIs' bn='লাইভ KPI' />
-          </span>
-          <span>
-            <LangText en='Approval alerts' bn='অনুমোদন অ্যালার্ট' />
-          </span>
-          <span>
-            <LangText en='Role access' bn='রোল অ্যাক্সেস' />
-          </span>
-          <span>
-            <LangText en='Audit trail' bn='অডিট ট্রেইল' />
-          </span>
-          <span>
-            <LangText en='Forecasting' bn='ফোরকাস্টিং' />
-          </span>
-          <span>
-            <LangText en='Branch view' bn='ব্রাঞ্চ ভিউ' />
-          </span>
-        </div>
-      </section>
-
-      <section className='selection sectionWrap animatedSection' id='selection'>
+      <section className='sectionWrap journeySection animatedSection'>
         <div className='sectionHead'>
           <p className='eyebrow'>
-            <LangText en='How To Select ERP' bn='ERP নির্বাচন' />
+            <LangText en='Interactive Journey' bn='ইন্টারঅ্যাকটিভ জার্নি' />
           </p>
           <h2>
             <LangText
-              en='Ask sharper questions before you buy.'
-              bn='কেনার আগে সঠিক প্রশ্ন করুন।'
+              en='Let users feel how one action moves naturally to the next inside your ERP.'
+              bn='user jeno feel korte pare, apnar ERP-te ekta action kivabe naturally next step-e jay।'
             />
           </h2>
         </div>
-        <div className='selectionGrid'>
-          <article>
-            <span>01</span>
-            <h3>
-              <LangText en='Fit' bn='উপযোগিতা' />
-            </h3>
-            <p>
-              <LangText
-                en='Does it match your industry, approval rules, tax needs, reporting style, and growth plan?'
-                bn='আপনার ইন্ডাস্ট্রি, ট্যাক্স, রিপোর্ট ও গ্রোথ প্ল্যানের সাথে মেলে কি?'
-              />
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>
-              <LangText en='Usability' bn='ব্যবহার সহজতা' />
-            </h3>
-            <p>
-              <LangText
-                en='Can daily users complete work quickly, or will the system create hidden spreadsheet workarounds?'
-                bn='ইউজাররা দ্রুত কাজ করতে পারবে, নাকি আবার স্প্রেডশিটে ফিরে যাবে?'
-              />
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>
-              <LangText en='Integration' bn='সংযোগ' />
-            </h3>
-            <p>
-              <LangText
-                en='Can it connect with ecommerce, POS, banks, barcode scanners, payroll, BI tools, and customer portals?'
-                bn='ই-কমার্স, POS, ব্যাংক, বারকোড, পেরোল ও BI টুলের সাথে যুক্ত হবে কি?'
-              />
-            </p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>
-              <LangText en='Total Cost' bn='মোট খরচ' />
-            </h3>
-            <p>
-              <LangText
-                en='Include licenses, setup, customization, data migration, training, support, hosting, and future changes.'
-                bn='লাইসেন্স, সেটআপ, কাস্টমাইজেশন, ডেটা মাইগ্রেশন, ট্রেনিং ও সাপোর্ট ধরুন।'
-              />
-            </p>
-          </article>
+        <div className='journeyTimeline'>
+          {journeySteps.map((step) => (
+            <article className='journeyCard' key={step.title}>
+              <div className='journeyImageWrap'>
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  width={1200}
+                  height={800}
+                />
+                <div className='journeyOverlay'>
+                  <span>{step.label}</span>
+                </div>
+              </div>
+              <div className='journeyContent'>
+                <h3>
+                  <LangText en={step.title} bn={step.bn} />
+                </h3>
+                <p>
+                  <LangText en={step.text} bn={step.text} />
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <PricingPlans />
-
-      <section className='faqSection sectionWrap animatedSection'>
-        <div className='sectionHead'>
-          <p className='eyebrow'>
-            <LangText en='ERP FAQ' bn='ERP প্রশ্নোত্তর' />
-          </p>
-          <h2>
-            <LangText
-              en='Answer the questions buyers already have.'
-              bn='ক্রেতাদের সাধারণ প্রশ্নের উত্তর দিন।'
-            />
-          </h2>
+      <section
+        className='sectionWrap dashboardViewSection animatedSection'
+        id='dashboard-view'
+      >
+        <div className='dashboardViewIntro'>
+          <div>
+            <p className='eyebrow'>
+              <LangText en='Dashboard Story' bn='ড্যাশবোর্ড স্টোরি' />
+            </p>
+            <h2>
+              <LangText
+                en='Built around the numbers your users see first every morning.'
+                bn='প্রতিদিন সকালেই যেসব সংখ্যা user-ra প্রথমে দেখে, design-ta এখন সেগুলোকেই কেন্দ্র করে।'
+              />
+            </h2>
+            <p>
+              <LangText
+                en='Collection, expense, profit, receivable, balance status, and client counts form the public-facing message of the product.'
+                bn='collection, expense, profit, receivable, balance status আর client count-ই এখন product-er public-facing message তৈরি করে।'
+              />
+            </p>
+          </div>
+          <div className='dashboardKpiRail'>
+            {summaryCards.map((card) => (
+              <article key={card.title}>
+                <small>
+                  <LangText en={card.title} bn={card.bn} />
+                </small>
+                <strong>Live View</strong>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className='faqGrid'>
-          {faqs.map((faq) => (
-            <article className='faqItem' key={faq.question}>
+
+        <div className='dashboardFeatureBoard'>
+          <div className='balanceTableMock'>
+            <div className='mockHeader'>
               <h3>
-                <PipeText text={faq.question} />
+                <LangText
+                  en='Current Balance Status'
+                  bn='কারেন্ট ব্যালেন্স স্ট্যাটাস'
+                />
+              </h3>
+            </div>
+            <div className='mockRow mockLabels'>
+              <span>SL</span>
+              <span>Account</span>
+              <span>Branch</span>
+              <span>Balance</span>
+            </div>
+            <div className='mockRow'>
+              <span>1</span>
+              <span>Corporate Billing</span>
+              <span>Dilkusha</span>
+              <span className='negative'>BDT -94,070</span>
+            </div>
+            <div className='mockRow'>
+              <span>2</span>
+              <span>Operations</span>
+              <span>Dhaka North</span>
+              <span className='negative'>BDT -2,890</span>
+            </div>
+            <div className='mockRow'>
+              <span>3</span>
+              <span>Receivable Desk</span>
+              <span>Head Office</span>
+              <span>BDT 11,800</span>
+            </div>
+          </div>
+
+          <div className='clientStatsPanel'>
+            <article>
+              <small>
+                <LangText en='Total Client' bn='মোট ক্লায়েন্ট' />
+              </small>
+              <strong>27</strong>
+            </article>
+            <article>
+              <small>
+                <LangText en='Active Client' bn='অ্যাকটিভ ক্লায়েন্ট' />
+              </small>
+              <strong>26</strong>
+            </article>
+            <article>
+              <small>
+                <LangText en='Inactive Client' bn='ইনঅ্যাকটিভ ক্লায়েন্ট' />
+              </small>
+              <strong>01</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className='showcaseBand animatedSection'>
+        <div className='showcaseInner'>
+          {showcasePanels.map((panel, index) => (
+            <article
+              className={`showcaseCard ${index % 2 === 1 ? 'reverse' : ''}`}
+              key={panel.title}
+            >
+              <div className='showcaseVisual'>
+                <Image
+                  src={panel.image}
+                  alt={panel.title}
+                  width={1400}
+                  height={900}
+                />
+              </div>
+              <div className='showcaseText'>
+                <p className='eyebrow'>
+                  <LangText
+                    en='Interactive Section'
+                    bn='ইন্টারঅ্যাকটিভ সেকশন'
+                  />
+                </p>
+                <h2>
+                  <LangText en={panel.title} bn={panel.bn} />
+                </h2>
+                <p>
+                  <LangText en={panel.text} bn={panel.text} />
+                </p>
+                <div className='showcaseHighlights'>
+                  <span>
+                    <LangText en='Layered cards' bn='লেয়ার্ড কার্ড' />
+                  </span>
+                  <span>
+                    <LangText
+                      en='Image-backed trust'
+                      bn='ইমেজ-ব্যাকড ট্রাস্ট'
+                    />
+                  </span>
+                  <span>
+                    <LangText en='Better user flow' bn='বেটার ইউজার ফ্লো' />
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className='sectionWrap workflowSection animatedSection'
+        id='workflow'
+      >
+        <div className='sectionHead'>
+          <p className='eyebrow'>
+            <LangText en='Operational Flow' bn='অপারেশনাল ফ্লো' />
+          </p>
+          <h2>
+            <LangText
+              en='The site narrative now follows your actual business flow.'
+              bn='site-er narrative এখন আপনার actual business flow follow করে।'
+            />
+          </h2>
+        </div>
+        <div className='workflowGrid'>
+          {workflows.map((item) => (
+            <article key={item.title}>
+              <h3>
+                <LangText en={item.title} bn={item.bn} />
               </h3>
               <p>
-                <PipeText text={faq.answer} />
+                <LangText en={item.text} bn={item.text} />
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className='flowConnector' aria-hidden='true'>
+          <span>Quotation</span>
+          <span>Invoice</span>
+          <span>Receipt</span>
+          <span>Accounts</span>
+          <span>Reports</span>
+        </div>
+      </section>
+
+      <section
+        className='sectionWrap reportsSection animatedSection'
+        id='reports'
+      >
+        <div className='sectionHead'>
+          <p className='eyebrow'>
+            <LangText
+              en='Report-led Presentation'
+              bn='রিপোর্ট-লেড প্রেজেন্টেশন'
+            />
+          </p>
+          <h2>
+            <LangText
+              en='Reports, account summaries, and client counts are now central visual elements.'
+              bn='report, account summary আর client count এখন central visual element।'
+            />
+          </h2>
+        </div>
+        <div className='reportFocusGrid'>
+          {reportBlocks.map((block) => (
+            <article key={block.title}>
+              <h3>
+                <LangText en={block.title} bn={block.bn} />
+              </h3>
+              <p>
+                <LangText en={block.text} bn={block.text} />
               </p>
             </article>
           ))}
         </div>
       </section>
 
+      <PricingPlans />
       <DemoRequest />
 
       <section className='cta animatedSection'>
@@ -805,14 +803,14 @@ export default function Home() {
         </p>
         <h2>
           <LangText
-            en='ERP is not just software. It is the operating discipline of the business.'
-            bn='ERP শুধু সফটওয়্যার নয়, এটি ব্যবসা চালানোর একটি স্মার্ট ডিসিপ্লিন।'
+            en='This design now reflects the real ERP product your visitors will actually log into.'
+            bn='এই design এখন সেই real ERP product-কেই reflect করে, যেটাতে visitor-ra আসলে login করবে।'
           />
         </h2>
         <p>
           <LangText
-            en='Start with clear processes, clean data, and measurable outcomes. Then choose technology that supports how the company should work tomorrow.'
-            bn='পরিষ্কার প্রসেস, ভালো ডেটা ও মাপা যায় এমন ফলাফল দিয়ে শুরু করুন, তারপর প্রযুক্তি নির্বাচন করুন।'
+            en='The homepage focuses on your authentic modules, authentic dashboard patterns, and authentic finance-client-reporting story.'
+            bn='homepage এখন authentic module, authentic dashboard pattern, আর authentic finance-client-reporting story-কেই focus করে।'
           />
         </p>
         <a className='primaryButton' href='#top'>
@@ -834,48 +832,10 @@ export default function Home() {
             </a>
             <p>
               <LangText
-                en='A connected ERP information hub for finance & accounting, inventory, HR, sales, operations, reporting, and business intelligence.'
-                bn='ফাইন্যান্স, ইনভেন্টরি, এইচআর, সেলস, অপারেশন, রিপোর্টিং ও বিজনেস ইন্টেলিজেন্সের জন্য একটি কানেক্টেড ERP ইনফরমেশন হাব।'
+                en='A focused ERP website for billing, collection, accounts, clients, reporting, payroll, administration, and operational visibility.'
+                bn='billing, collection, accounts, client, reporting, payroll, administration আর operational visibility-কেন্দ্রিক একটি ERP website।'
               />
             </p>
-            <div
-              className='footerSocials'
-              aria-label='Social and contact links'
-            >
-              <a
-                href='https://m360ict.com/'
-                target='_blank'
-                rel='noreferrer'
-                aria-label='Visit M360ICT website'
-                title='Website'
-              >
-                <svg viewBox='0 0 24 24' aria-hidden='true'>
-                  <path d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 9h-3.1a15.5 15.5 0 0 0-1.1-5 8.05 8.05 0 0 1 4.2 5ZM12 4.1c.7 1 1.4 3.1 1.7 6.9h-3.4c.3-3.8 1-5.9 1.7-6.9ZM4.3 13h3.8c.1 1.8.4 3.5.8 4.9A8.02 8.02 0 0 1 4.3 13Zm3.8-2H4.3a8.02 8.02 0 0 1 4.6-4.9A20.6 20.6 0 0 0 8.1 11Zm3.9 8.9c-.7-1-1.4-3.1-1.7-6.9h3.4c-.3 3.8-1 5.9-1.7 6.9Zm3.1-2c.4-1.4.7-3.1.8-4.9h3.8a8.02 8.02 0 0 1-4.6 4.9Z' />
-                </svg>
-              </a>
-              <a
-                href='https://www.linkedin.com/company/m360-ict'
-                target='_blank'
-                rel='noreferrer'
-                aria-label='Visit M360ICT LinkedIn'
-                title='LinkedIn'
-              >
-                <svg viewBox='0 0 24 24' aria-hidden='true'>
-                  <path d='M6.9 8.9H3.5v11.2h3.4V8.9ZM5.2 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm15.3 10.3c0-3.1-1.7-5.1-4.4-5.1-1.8 0-2.8 1-3.2 1.7V8.9H9.6v11.2H13v-6.2c0-1.6.8-2.5 2.1-2.5 1.2 0 2 1 2 2.5v6.2h3.4v-6.3Z' />
-                </svg>
-              </a>
-              <a
-                href='https://www.facebook.com/m360ict'
-                target='_blank'
-                rel='noreferrer'
-                aria-label='Visit M360ICT Facebook'
-                title='Facebook'
-              >
-                <svg viewBox='0 0 24 24' aria-hidden='true'>
-                  <path d='M14 8.1h2.2V4.4c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.3 1.9-5.3 5.5v3.1H4.2V17h3.5v5h4.2v-5h3.4l.6-4.2h-4V10c0-1.2.4-1.9 2.1-1.9Z' />
-                </svg>
-              </a>
-            </div>
           </div>
 
           <div className='footerLinks'>
@@ -883,16 +843,16 @@ export default function Home() {
               <LangText en='Explore' bn='এক্সপ্লোর' />
             </h2>
             <a href='#modules'>
-              <LangText en='ERP Modules' bn='ERP মডিউল' />
+              <LangText en='Actual Modules' bn='আসল মডিউল' />
             </a>
-            <a href='#benefits'>
-              <LangText en='Benefits' bn='সুবিধা' />
+            <a href='#dashboard-view'>
+              <LangText en='Dashboard View' bn='ড্যাশবোর্ড ভিউ' />
             </a>
-            <a href='#implementation'>
-              <LangText en='Implementation' bn='বাস্তবায়ন' />
+            <a href='#workflow'>
+              <LangText en='Workflow' bn='ওয়ার্কফ্লো' />
             </a>
-            <a href='#pricing'>
-              <LangText en='Pricing Plans' bn='প্রাইসিং প্ল্যান' />
+            <a href='#reports'>
+              <LangText en='Reports' bn='রিপোর্ট' />
             </a>
             <a href='#demo'>
               <LangText en='Request Demo' bn='ডেমো চাই' />

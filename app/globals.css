@@ -249,11 +249,11 @@ img {
   background: rgba(0, 180, 233, 0.1);
 }
 
-.pageScrolled .menuButton > span {
+.pageScrolled .menuButton>span {
   background: var(--ink);
 }
 
-.pageScrolled .navMenuToggle:checked + .menuButton > span {
+.pageScrolled .navMenuToggle:checked+.menuButton>span {
   background: var(--white);
 }
 
@@ -332,7 +332,7 @@ img {
   margin-bottom: 20px;
 }
 
-.heroChips > span {
+.heroChips>span {
   min-height: 34px;
   padding: 8px 12px;
   display: inline-flex;
@@ -817,7 +817,7 @@ p {
   transform: scaleX(1);
 }
 
-.moduleCard > span {
+.moduleCard>span {
   display: inline-flex;
   width: 44px;
   height: 44px;
@@ -899,7 +899,7 @@ p {
   margin-bottom: 0;
 }
 
-.reportIntro > p {
+.reportIntro>p {
   margin: 0;
   color: var(--muted);
   line-height: 1.8;
@@ -1130,7 +1130,7 @@ p {
   animation: riseSoft 680ms ease both;
 }
 
-.timelineItem > span {
+.timelineItem>span {
   width: 48px;
   height: 48px;
   display: inline-flex;
@@ -1227,7 +1227,7 @@ p {
   margin: 6px 0 0;
 }
 
-.comparisonRow > span {
+.comparisonRow>span {
   width: 42px;
   height: 42px;
   display: inline-flex;
@@ -1351,7 +1351,7 @@ p {
   transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
 }
 
-.commandGrid > span:hover {
+.commandGrid>span:hover {
   background: rgba(0, 180, 233, 0.22);
   border-color: rgba(0, 180, 233, 0.62);
   transform: translateY(-3px);
@@ -1663,7 +1663,7 @@ p {
   transform: translateY(-4px);
 }
 
-.selectionGrid article > span {
+.selectionGrid article>span {
   width: 52px;
   height: 52px;
   margin-bottom: 30px;
@@ -1679,7 +1679,7 @@ p {
   transition: transform 180ms ease, background 180ms ease;
 }
 
-.selectionGrid article:hover > span {
+.selectionGrid article:hover>span {
   background: var(--cyan);
   color: var(--white);
   transform: translateY(-3px);
@@ -1734,7 +1734,7 @@ p {
   margin-top: 28px;
 }
 
-.demoHighlights > span {
+.demoHighlights>span {
   width: fit-content;
   max-width: 100%;
   padding: 10px 12px;
@@ -1848,6 +1848,7 @@ p {
 }
 
 @keyframes sectionSignal {
+
   0%,
   42% {
     transform: translateX(-120px);
@@ -1865,6 +1866,7 @@ p {
 }
 
 @keyframes demoPulse {
+
   0%,
   100% {
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34), 0 0 0 0 rgba(0, 180, 233, 0.42);
@@ -1888,6 +1890,7 @@ p {
 }
 
 @keyframes pulseLine {
+
   0%,
   100% {
     opacity: 0.28;
@@ -1907,6 +1910,7 @@ p {
 }
 
 @keyframes pulseDonut {
+
   0%,
   100% {
     transform: scale(1);
@@ -2061,7 +2065,7 @@ p {
   transition: color 180ms ease;
 }
 
-.supportCard > span {
+.supportCard>span {
   width: auto;
   height: auto;
   display: block;
@@ -2164,7 +2168,7 @@ p {
     transition: background 180ms ease, border-color 180ms ease;
   }
 
-  .menuButton > span {
+  .menuButton>span {
     width: 18px;
     height: 2px;
     display: block;
@@ -2173,24 +2177,24 @@ p {
     transition: transform 180ms ease, opacity 180ms ease;
   }
 
-  .navMenuToggle:checked + .menuButton > span {
+  .navMenuToggle:checked+.menuButton>span {
     background: var(--white);
   }
 
-  .navMenuToggle:checked + .menuButton {
+  .navMenuToggle:checked+.menuButton {
     background: var(--cyan);
     border-color: var(--cyan);
   }
 
-  .navMenuToggle:checked + .menuButton > span:nth-child(1) {
+  .navMenuToggle:checked+.menuButton>span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
 
-  .navMenuToggle:checked + .menuButton > span:nth-child(2) {
+  .navMenuToggle:checked+.menuButton>span:nth-child(2) {
     opacity: 0;
   }
 
-  .navMenuToggle:checked + .menuButton > span:nth-child(3) {
+  .navMenuToggle:checked+.menuButton>span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
   }
 
@@ -2209,7 +2213,7 @@ p {
     transition: max-height 220ms ease, opacity 180ms ease, padding 180ms ease;
   }
 
-  .navMenuToggle:checked ~ .navLinks {
+  .navMenuToggle:checked~.navLinks {
     max-height: min(520px, calc(100vh - 92px));
     padding: 14px;
     opacity: 1;
@@ -2220,7 +2224,7 @@ p {
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
   }
 
-  .pageScrolled .navMenuToggle:checked ~ .navLinks {
+  .pageScrolled .navMenuToggle:checked~.navLinks {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 18px 42px rgba(0, 127, 168, 0.14);
   }
@@ -2344,7 +2348,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .comparisonRow > span {
+  .comparisonRow>span {
     transform: rotate(90deg);
   }
 
@@ -2450,7 +2454,7 @@ p {
     gap: 8px;
   }
 
-  .heroChips > span {
+  .heroChips>span {
     font-size: 0.8rem;
   }
 
@@ -2512,5 +2516,1135 @@ p {
     min-height: 48px;
     padding: 12px 16px;
     font-size: 0.9rem;
+  }
+}
+
+.erpHero {
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(24, 205, 255, 0.2), transparent 20rem),
+    radial-gradient(circle at 88% 16%, rgba(135, 126, 232, 0.18), transparent 22rem),
+    radial-gradient(circle at 72% 82%, rgba(18, 155, 196, 0.18), transparent 18rem),
+    linear-gradient(180deg, rgba(7, 18, 20, 0.94), rgba(7, 18, 20, 0.84)),
+    linear-gradient(135deg, #071a22, #0d3240 52%, #09141b);
+}
+
+.erpHero::before {
+  background-image:
+    linear-gradient(rgba(0, 180, 233, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 233, 0.14) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, black, transparent 74%);
+  opacity: 0.4;
+}
+
+.erpHeroContent {
+  width: min(1420px, calc(100% - 32px));
+  padding: 118px 0 28px;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+}
+
+.erpHeroPanel {
+  position: relative;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.95fr);
+  gap: 22px;
+  align-items: stretch;
+  min-height: calc(100svh - 150px);
+  max-height: calc(100svh - 150px);
+  padding: 24px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.01)),
+    radial-gradient(circle at top left, rgba(0, 180, 233, 0.1), transparent 18rem),
+    rgba(7, 18, 20, 0.28);
+  border: 1px solid rgba(130, 207, 231, 0.14);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.erpHeroPanel::before,
+.erpHeroPanel::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(26px);
+  pointer-events: none;
+}
+
+.erpHeroPanel::before {
+  width: 220px;
+  height: 220px;
+  left: -60px;
+  top: -40px;
+  background: rgba(0, 180, 233, 0.14);
+}
+
+.erpHeroPanel::after {
+  width: 180px;
+  height: 180px;
+  right: -40px;
+  bottom: -30px;
+  background: rgba(138, 132, 214, 0.16);
+}
+
+.erpHeroPanel .heroCopy {
+  position: relative;
+  z-index: 1;
+  padding: 18px 10px 18px 8px;
+  display: grid;
+  align-content: center;
+}
+
+.erpHeroPanel .heroChips {
+  margin-bottom: 14px;
+}
+
+.erpHeroPanel .eyebrow {
+  margin-bottom: 10px;
+}
+
+.erpHeroPanel h1 {
+  max-width: 720px;
+  font-size: clamp(2.5rem, 4vw, 4.1rem);
+  letter-spacing: -0.04em;
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.34);
+}
+
+.erpHeroPanel .heroText {
+  max-width: 670px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1.02rem;
+  line-height: 1.66;
+}
+
+.erpHeroPanel .heroActions {
+  margin-top: 22px;
+}
+
+.erpHeroPanel .heroStats {
+  margin-top: 18px;
+  gap: 10px;
+}
+
+.erpHeroPanel .heroStats strong {
+  min-height: 74px;
+  padding: 14px;
+  font-size: 1.35rem;
+}
+
+.erpHeroPanel .heroStats small {
+  margin-top: 4px;
+}
+
+.erpHeroPanel .heroChips>span {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(123, 220, 244, 0.24);
+  color: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.erpHeroPanel .primaryButton {
+  min-width: 170px;
+  background: linear-gradient(135deg, #18b7e8, #0f88b1);
+  box-shadow: 0 20px 34px rgba(15, 146, 191, 0.28);
+}
+
+.erpHeroPanel .secondaryButton {
+  min-width: 170px;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.erpHeroPanel .secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.erpHeroPanel .heroStats strong {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.03);
+  border-color: rgba(123, 220, 244, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.erpDashboardPreview {
+  min-height: 0;
+  max-height: 100%;
+  padding: 0 12px 14px;
+  display: grid;
+  gap: 0;
+  background: transparent;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.laptopMockup {
+  position: relative;
+  padding: 14px 14px 10px;
+  height: 100%;
+  border-radius: 22px 22px 12px 12px;
+  background:
+    linear-gradient(180deg, #3d4651, #151c24 16%, #0a1118 100%);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: perspective(1400px) rotateY(-10deg) rotateX(3deg);
+  transform-origin: center left;
+}
+
+.laptopScreen {
+  position: relative;
+  padding: 16px 16px 12px;
+  height: 100%;
+  border-radius: 16px 16px 10px 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 12%),
+    rgba(244, 249, 252, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+  display: grid;
+}
+
+.laptopScreen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.18), transparent 22%, transparent 72%, rgba(255, 255, 255, 0.08));
+  pointer-events: none;
+}
+
+.laptopCamera {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #5ec0ff, #101820 72%);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+.laptopBase {
+  width: min(92%, 620px);
+  height: 12px;
+  margin: -1px auto 0;
+  border-radius: 0 0 20px 20px;
+  background:
+    linear-gradient(180deg, #d6dde3, #aeb8c2 42%, #d9e1e7 100%);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.erpMainMock,
+.erpPreviewTop,
+.erpPreviewBottom,
+.erpDailyCards,
+.actualModuleCard,
+.balanceTableMock,
+.clientStatsPanel article,
+.dashboardKpiRail article,
+.workflowGrid article,
+.reportFocusGrid article {
+  border-radius: 8px;
+}
+
+.erpPreviewTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 248px;
+  gap: 10px;
+}
+
+.erpMainMock {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+.erpTopStrip {
+  min-height: 44px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  border-radius: 8px;
+}
+
+.erpTopDots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.erpTopDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(59, 126, 185, 0.34);
+}
+
+.erpTopDots span:first-child {
+  background: #18b7e8;
+}
+
+.erpTopStrip strong {
+  color: var(--cyan-deep);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+}
+
+.erpChartMock {
+  min-height: 184px;
+  padding: 12px 12px 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+  background:
+    linear-gradient(rgba(9, 70, 91, 0.08) 1px, transparent 1px),
+    var(--white);
+  background-size: 100% 36px;
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  border-radius: 8px;
+}
+
+.erpChartMock span {
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #8a84d6, rgba(138, 132, 214, 0.26));
+}
+
+.erpChartMock span.short {
+  min-height: 18px;
+}
+
+.erpChartMock span.tall {
+  min-height: 126px;
+}
+
+.erpChartMock span.empty {
+  min-height: 6px;
+  opacity: 0.2;
+}
+
+.erpDailyCards {
+  display: grid;
+  gap: 8px;
+}
+
+.erpCompactPanel,
+.erpStatusBar {
+  padding: 10px;
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(0, 180, 233, 0.06), transparent 75%),
+    var(--white);
+  box-shadow: 0 16px 34px rgba(8, 45, 59, 0.08);
+}
+
+.erpCompactTitle {
+  margin: 0 0 8px;
+  color: #0a5770;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.erpModulePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.erpModulePills span {
+  min-height: 22px;
+  padding: 3px 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(24, 183, 232, 0.1);
+  color: #0b5a73;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.erpRecentList {
+  display: grid;
+  gap: 6px;
+}
+
+.erpRecentList div {
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: rgba(0, 180, 233, 0.04);
+  border: 1px solid rgba(0, 127, 168, 0.08);
+}
+
+.erpRecentList strong,
+.erpRecentList span {
+  font-size: 0.7rem;
+}
+
+.erpRecentList strong {
+  color: #1d343c;
+}
+
+.erpRecentList span {
+  color: #0b6b86;
+  font-weight: 700;
+}
+
+.erpSummaryStack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.erpMetricCard,
+.dashboardKpiRail article,
+.clientStatsPanel article,
+.workflowGrid article,
+.reportFocusGrid article,
+.actualModuleCard,
+.balanceTableMock {
+  background: var(--white);
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  box-shadow: 0 16px 34px rgba(8, 45, 59, 0.08);
+}
+
+.erpMetricCard {
+  min-height: 72px;
+  padding: 6px 8px;
+}
+
+.erpMetricCardPrimary {
+  background:
+    linear-gradient(135deg, rgba(24, 183, 232, 0.14), rgba(24, 183, 232, 0.03)),
+    var(--white);
+  border-color: rgba(24, 183, 232, 0.28);
+  box-shadow:
+    0 18px 32px rgba(15, 146, 191, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.erpMetricCardPrimary h3 {
+  background: linear-gradient(135deg, #18b7e8, #0f88b1);
+}
+
+.erpMetricCardPrimary strong {
+  color: #0b5a73;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.erpMetricCard h3 {
+  min-height: 22px;
+  margin: 0;
+  padding: 4px 6px;
+  border-radius: 8px;
+  background: #3b7eb9;
+  color: var(--white);
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.erpMetricCard strong {
+  display: block;
+  padding: 8px 4px 0;
+  color: #1a2d34;
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.erpMetricCard.wide strong {
+  font-size: 0.74rem;
+}
+
+.erpSummaryStack h3,
+.actualModuleCard h3,
+.workflowGrid h3,
+.reportFocusGrid h3,
+.balanceTableMock h3 {
+  font-size: 1.05rem;
+}
+
+.erpMonthlyCards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.erpPreviewBottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 240px;
+  gap: 8px;
+}
+
+.compactBottom {
+  grid-template-columns: 1fr;
+}
+
+.heroBalanceTable {
+  min-height: 0;
+}
+
+.heroClientStats article {
+  padding: 8px 10px;
+  gap: 4px;
+}
+
+.heroClientStatsWide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.erpStatusBar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.erpStatusBar div {
+  min-height: 48px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(0, 180, 233, 0.05);
+  border: 1px solid rgba(0, 127, 168, 0.1);
+}
+
+.erpStatusBar span {
+  display: block;
+  color: #0a5770;
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.erpStatusBar strong {
+  display: block;
+  margin-top: 2px;
+  color: #1e343b;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.heroClientStats strong {
+  margin-top: 2px;
+  font-size: 0.92rem;
+}
+
+.heroClientStats small {
+  font-size: 0.68rem;
+}
+
+.balanceTableMock {
+  padding: 14px;
+}
+
+.mockHeader {
+  margin-bottom: 8px;
+}
+
+.mockHeader h3 {
+  font-size: 0.98rem;
+}
+
+.mockRow {
+  gap: 10px;
+  padding: 10px 10px;
+  font-size: 0.9rem;
+}
+
+.actualModuleSection,
+.dashboardViewSection,
+.workflowSection,
+.reportsSection {
+  position: relative;
+}
+
+.actualModuleSection::after,
+.dashboardViewSection::after,
+.workflowSection::after,
+.reportsSection::after {
+  content: '';
+  position: absolute;
+  inset: 22px 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 180, 233, 0.46), transparent);
+}
+
+.actualModuleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 22px 54px rgba(8, 45, 59, 0.06);
+}
+
+.actualModuleShowcase {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+.actualModuleHero {
+  padding: 0;
+  color: var(--ink);
+  box-shadow: none;
+  background: transparent;
+}
+
+.actualModuleHeroClean {
+  padding: 0 0 6px;
+  max-width: 760px;
+}
+
+.actualModuleHeroClean h2 {
+  max-width: 860px;
+  font-size: clamp(2.1rem, 3.1vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.actualModuleHeroClean > p {
+  max-width: 720px;
+  font-size: 1.02rem;
+}
+
+.actualModuleMiniStats {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.actualModuleMiniStats span {
+  min-height: 76px;
+  padding: 14px 16px;
+  display: grid;
+  align-content: center;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(24, 183, 232, 0.1), transparent 90%),
+    var(--white);
+  border: 1px solid rgba(0, 127, 168, 0.12);
+  box-shadow: 0 14px 34px rgba(8, 45, 59, 0.06);
+}
+
+.actualModuleMiniStats strong {
+  color: #0b4d62;
+  font-size: 1rem;
+}
+
+.actualModuleMiniStats small {
+  margin-top: 4px;
+  color: #60757c;
+  font-size: 0.8rem;
+}
+
+.actualModuleCard {
+  min-height: 180px;
+  padding: 20px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  background:
+    radial-gradient(circle at top right, rgba(24, 183, 232, 0.12), transparent 9rem),
+    linear-gradient(180deg, rgba(0, 180, 233, 0.08), transparent 80%),
+    var(--white);
+  border-right: 1px solid rgba(0, 127, 168, 0.12);
+  border-bottom: 1px solid rgba(0, 127, 168, 0.12);
+  border-radius: 0;
+  box-shadow: none;
+  transition: background 180ms ease;
+}
+
+.actualModuleCard:hover {
+  transform: none;
+  border-color: rgba(0, 127, 168, 0.12);
+  box-shadow: none;
+  background:
+    radial-gradient(circle at top right, rgba(24, 183, 232, 0.18), transparent 9rem),
+    linear-gradient(180deg, rgba(0, 180, 233, 0.12), transparent 80%),
+    var(--white);
+}
+
+.actualModuleCard:nth-child(3n) {
+  border-right: 0;
+}
+
+.actualModuleCard:nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
+.actualModuleCard>span {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f92bf;
+  color: var(--white);
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+.dashboardViewIntro {
+  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.dashboardKpiRail {
+  display: grid;
+  gap: 14px;
+}
+
+.dashboardKpiRail article {
+  min-height: 92px;
+  padding: 16px 18px;
+}
+
+.dashboardKpiRail small,
+.clientStatsPanel small {
+  display: block;
+  color: #4c6973;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.dashboardKpiRail strong,
+.clientStatsPanel strong {
+  display: block;
+  margin-top: 8px;
+  color: #0a4155;
+  font-size: 1.55rem;
+}
+
+.dashboardFeatureBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) 260px;
+  gap: 20px;
+}
+
+.balanceTableMock {
+  padding: 20px;
+}
+
+.mockHeader {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.mockRow {
+  display: grid;
+  grid-template-columns: 72px minmax(160px, 1fr) minmax(110px, 0.9fr) minmax(110px, 0.9fr);
+  gap: 12px;
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(0, 127, 168, 0.12);
+  color: #12313c;
+}
+
+.mockRow:last-child {
+  border-bottom: 0;
+}
+
+.mockLabels {
+  background: rgba(15, 146, 191, 0.12);
+  border-radius: 8px 8px 0 0;
+  font-weight: 800;
+}
+
+.negative {
+  color: #d73535;
+}
+
+.clientStatsPanel {
+  display: grid;
+  gap: 16px;
+}
+
+.clientStatsPanel article {
+  padding: 18px;
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+.workflowGrid,
+.reportFocusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.workflowGrid article,
+.reportFocusGrid article {
+  min-height: 220px;
+  padding: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 180, 233, 0.12), transparent 8rem),
+    var(--white);
+}
+
+.reportFocusGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.journeySection,
+.showcaseBand {
+  position: relative;
+}
+
+.journeyTimeline {
+  display: grid;
+  gap: 24px;
+}
+
+.journeyCard {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid rgba(0, 127, 168, 0.16);
+  box-shadow: 0 28px 60px rgba(8, 45, 59, 0.1);
+}
+
+.journeyCard:nth-child(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+}
+
+.journeyCard:nth-child(even) .journeyImageWrap {
+  order: 2;
+}
+
+.journeyCard:nth-child(even) .journeyContent {
+  order: 1;
+}
+
+.journeyImageWrap {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.journeyImageWrap img,
+.showcaseVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease, filter 700ms ease;
+}
+
+.journeyCard:hover img,
+.showcaseCard:hover img {
+  transform: scale(1.05);
+  filter: saturate(1.08);
+}
+
+.journeyOverlay {
+  position: absolute;
+  left: 22px;
+  top: 22px;
+}
+
+.journeyOverlay span {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(7, 18, 20, 0.72);
+  color: var(--white);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(10px);
+}
+
+.journeyContent {
+  padding: 34px;
+  display: grid;
+  align-content: center;
+  background:
+    radial-gradient(circle at top right, rgba(0, 180, 233, 0.16), transparent 10rem),
+    linear-gradient(180deg, rgba(0, 180, 233, 0.06), transparent 82%),
+    var(--white);
+}
+
+.showcaseBand {
+  padding: 24px 0 96px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(0, 180, 233, 0.12), transparent 22rem),
+    linear-gradient(180deg, rgba(234, 249, 255, 0.75), rgba(248, 252, 255, 0.92));
+}
+
+.showcaseInner {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+}
+
+.showcaseCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  overflow: hidden;
+  border: 1px solid rgba(0, 127, 168, 0.16);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 30px 72px rgba(8, 45, 59, 0.1);
+}
+
+.showcaseCard.reverse {
+  grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1fr);
+}
+
+.showcaseCard.reverse .showcaseVisual {
+  order: 2;
+}
+
+.showcaseCard.reverse .showcaseText {
+  order: 1;
+}
+
+.showcaseVisual {
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.showcaseText {
+  padding: 42px 34px;
+  display: grid;
+  align-content: center;
+  background:
+    radial-gradient(circle at top left, rgba(0, 180, 233, 0.15), transparent 11rem),
+    var(--white);
+}
+
+.showcaseHighlights {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showcaseHighlights span {
+  min-height: 36px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 180, 233, 0.24);
+  border-radius: 999px;
+  background: rgba(0, 180, 233, 0.08);
+  color: #08485c;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.flowConnector {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.flowConnector span {
+  min-height: 44px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f92bf, #13b5db);
+  color: var(--white);
+  font-weight: 800;
+  box-shadow: 0 16px 30px rgba(15, 146, 191, 0.18);
+}
+
+.flowConnector span:not(:last-child)::after {
+  content: '→';
+  margin-left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1100px) {
+  .erpHeroContent {
+    min-height: auto;
+    padding: 126px 0 42px;
+  }
+
+  .erpHeroPanel,
+  .dashboardViewIntro,
+  .dashboardFeatureBoard,
+  .actualModuleShowcase,
+  .actualModuleGrid,
+  .workflowGrid,
+  .reportFocusGrid,
+  .showcaseCard,
+  .showcaseCard.reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .erpDashboardPreview {
+    grid-column: 1 / -1;
+  }
+
+  .erpHeroPanel {
+    min-height: auto;
+    max-height: none;
+    padding: 20px;
+  }
+
+  .erpPreviewTop,
+  .erpPreviewBottom,
+  .erpMonthlyCards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .erpStatusBar {
+    grid-template-columns: 1fr;
+  }
+
+  .laptopMockup {
+    transform: none;
+  }
+
+  .dashboardFeatureBoard {
+    grid-template-columns: 1fr;
+  }
+
+  .clientStatsPanel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .erpHero {
+    min-height: auto;
+  }
+
+  .erpHeroPanel,
+  .erpDashboardPreview,
+  .erpPreviewTop,
+  .erpPreviewBottom,
+  .actualModuleShowcase,
+  .actualModuleGrid,
+  .dashboardViewIntro,
+  .workflowGrid,
+  .reportFocusGrid,
+  .clientStatsPanel,
+  .journeyCard,
+  .showcaseCard,
+  .showcaseCard.reverse,
+  .erpMonthlyCards {
+    grid-template-columns: 1fr;
+  }
+
+  .erpDashboardPreview {
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .laptopMockup {
+    padding: 12px;
+  }
+
+  .laptopScreen {
+    padding: 16px 14px 14px;
+  }
+
+  .heroClientStatsWide {
+    grid-template-columns: 1fr;
+  }
+
+  .erpStatusBar {
+    grid-template-columns: 1fr;
+  }
+
+  .actualModuleMiniStats {
+    grid-template-columns: 1fr;
+  }
+
+  .journeyCard:nth-child(even) .journeyImageWrap,
+  .journeyCard:nth-child(even) .journeyContent,
+  .showcaseCard.reverse .showcaseVisual,
+  .showcaseCard.reverse .showcaseText {
+    order: initial;
+  }
+
+  .mockRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .erpHeroContent {
+    padding-top: 132px;
+  }
+
+  .erpHeroPanel h1 {
+    font-size: 2.15rem;
+  }
+
+  .laptopBase {
+    width: 88%;
+    height: 12px;
+  }
+
+  .erpSummaryStack {
+    grid-template-columns: 1fr;
+  }
+
+  .mockRow {
+    grid-template-columns: 1fr;
+  }
+
+  .erpSidebarBrand {
+    font-size: 1.2rem;
+  }
+
+  .journeyContent,
+  .showcaseText {
+    padding: 26px 18px;
+  }
+
+  .showcaseVisual,
+  .journeyImageWrap {
+    min-height: 260px;
+  }
+
+  .flowConnector span {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .flowConnector span::after {
+    display: none;
   }
 }
