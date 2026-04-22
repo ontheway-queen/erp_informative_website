@@ -185,27 +185,37 @@ const trustHighlights = [
   { value: 'Demo-led', en: 'Product walkthrough', bn: 'প্রোডাক্ট ওয়াকথ্রু' },
   { value: '10AM-6PM', en: 'Support window', bn: 'সাপোর্ট সময়' },
   { value: 'Real Flow', en: 'Module mapping', bn: 'মডিউল ম্যাপিং' },
-  { value: 'Finance-first', en: 'Reporting clarity', bn: 'রিপোর্টিং ক্ল্যারিটি' },
+  {
+    value: 'Finance-first',
+    en: 'Reporting clarity',
+    bn: 'রিপোর্টিং ক্ল্যারিটি',
+  },
 ];
 
 const painComparisons = [
   {
     beforeTitle: 'Manual follow-up pressure',
-    beforeText: 'Teams check calls, spreadsheets, and notes separately, so due follow-up gets delayed.',
+    beforeText:
+      'Teams check calls, spreadsheets, and notes separately, so due follow-up gets delayed.',
     afterTitle: 'Central follow-up visibility',
-    afterText: 'Collection, receipt, and receivable status stay in one flow, so action becomes faster.',
+    afterText:
+      'Collection, receipt, and receivable status stay in one flow, so action becomes faster.',
   },
   {
     beforeTitle: 'Unclear daily numbers',
-    beforeText: 'Sales, expense, and profit stay scattered, making daily business decisions slower.',
+    beforeText:
+      'Sales, expense, and profit stay scattered, making daily business decisions slower.',
     afterTitle: 'Decision-ready daily snapshot',
-    afterText: 'A clear dashboard and report view helps management understand today position immediately.',
+    afterText:
+      'A clear dashboard and report view helps management understand today position immediately.',
   },
   {
     beforeTitle: 'Too much back-and-forth',
-    beforeText: 'Billing, accounts, and reporting teams often work from different references and shared files.',
+    beforeText:
+      'Billing, accounts, and reporting teams often work from different references and shared files.',
     afterTitle: 'Connected operational flow',
-    afterText: 'Quotation, invoice, receipt, accounts, and report flow stay aligned inside one system.',
+    afterText:
+      'Quotation, invoice, receipt, accounts, and report flow stay aligned inside one system.',
   },
 ];
 
@@ -385,22 +395,13 @@ export default function Home() {
             <div className='heroCopy'>
               <div className='heroChips' aria-label='Actual ERP highlights'>
                 <span>
-                  <LangText
-                    en='Real-time data'
-                    bn='রিয়েল-টাইম ডাটা'
-                  />
+                  <LangText en='Real-time data' bn='রিয়েল-টাইম ডাটা' />
                 </span>
                 <span>
-                  <LangText
-                    en='Smart workflows'
-                    bn='স্মার্ট ওয়ার্কফ্লো'
-                  />
+                  <LangText en='Smart workflows' bn='স্মার্ট ওয়ার্কফ্লো' />
                 </span>
                 <span>
-                  <LangText
-                    en='Connected teams'
-                    bn='কানেক্টেড টিম'
-                  />
+                  <LangText en='Connected teams' bn='কানেক্টেড টিম' />
                 </span>
               </div>
               <p className='eyebrow'>
@@ -412,7 +413,7 @@ export default function Home() {
               <h1>
                 <LangText
                   en='Smart ERP for financial control, customer management, and daily operations.'
-                  bn='উন্নত আর্থিক নিয়ন্ত্রণ, গ্রাহক ব্যবস্থাপনা এবং দৈনন্দিন ব্যবসায়িক কাজের জন্য একটি স্মার্ট ERP সমাধান।'
+                  bn='উন্নত আর্থিক নিয়ন্ত্রণ, গ্রাহক ব্যবস্থাপনা এবং ব্যবসায়িক কাজের জন্য একটি স্মার্ট ERP সমাধান।'
                 />
               </h1>
               <p className='heroText'>
@@ -908,14 +909,19 @@ export default function Home() {
               </article>
             ))}
           </div>
-
         </div>
 
-        <aside className='reportsGraphPanel' aria-label='Reporting graph preview'>
+        <aside
+          className='reportsGraphPanel'
+          aria-label='Reporting graph preview'
+        >
           <div className='reportsGraphHeader'>
             <div>
               <p className='eyebrow'>
-                <LangText en='Financial Snapshot' bn='ফিন্যান্সিয়াল স্ন্যাপশট' />
+                <LangText
+                  en='Financial Snapshot'
+                  bn='ফিন্যান্সিয়াল স্ন্যাপশট'
+                />
               </p>
               <h3>
                 <LangText
@@ -942,7 +948,10 @@ export default function Home() {
             <div className='reportsTrendCard'>
               <div className='reportsTrendMeta'>
                 <span>
-                  <LangText en='Weekly sales monitor' bn='সাপ্তাহিক সেলস মনিটর' />
+                  <LangText
+                    en='Weekly sales monitor'
+                    bn='সাপ্তাহিক সেলস মনিটর'
+                  />
                 </span>
                 <strong>BDT 27,000</strong>
               </div>
