@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -61,7 +62,7 @@ html[data-lang="bn"] select.lang-bn {
   margin-left: auto;
   display: inline-flex;
   gap: 4px;
-  padding: 5px;
+  padding: 4px;
   background: rgba(7, 18, 20, 0.72);
   border: 1px solid rgba(0, 180, 233, 0.44);
   border-radius: 8px;
@@ -70,14 +71,15 @@ html[data-lang="bn"] select.lang-bn {
 }
 
 .languageToggle button {
-  min-height: 34px;
+  min-height: 30px;
   border: 0;
   border-radius: 6px;
-  padding: 8px 11px;
+  padding: 6px 9px;
   background: transparent;
   color: var(--white);
   cursor: pointer;
   font-weight: 800;
+  font-size: 0.82rem;
 }
 
 .languageToggle button.active {
@@ -203,8 +205,8 @@ img {
 }
 
 .navLinks .navDemoButton {
-  min-height: 42px;
-  padding: 11px 15px;
+  min-height: 36px;
+  padding: 8px 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -212,6 +214,7 @@ img {
   color: var(--white);
   border-radius: 8px;
   font-weight: 800;
+  font-size: 0.88rem;
   opacity: 1;
 }
 
@@ -558,8 +561,8 @@ li .bn {
   right: 24px;
   bottom: 24px;
   z-index: 1000;
-  min-height: 56px;
-  padding: 16px 22px;
+  min-height: 46px;
+  padding: 10px 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -569,6 +572,7 @@ li .bn {
   border-radius: 8px;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
   font-weight: 800;
+  font-size: 0.84rem;
   text-transform: uppercase;
   animation: demoPulse 2.8s ease-in-out infinite;
 }
@@ -1707,6 +1711,7 @@ p {
   grid-template-columns: 0.88fr 1.12fr;
   gap: 32px;
   align-items: stretch;
+  scroll-margin-top: 112px;
   background:
     linear-gradient(135deg, rgba(0, 180, 233, 0.18), transparent 34%),
     var(--ink);
@@ -2131,6 +2136,14 @@ p {
 }
 
 @media (max-width: 900px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  .demoRequest {
+    scroll-margin-top: 96px;
+  }
+
   .nav {
     display: grid;
     grid-template-columns: minmax(96px, 132px) 1fr auto;
@@ -2358,6 +2371,14 @@ p {
 }
 
 @media (max-width: 560px) {
+  html {
+    scroll-padding-top: 88px;
+  }
+
+  .demoRequest {
+    scroll-margin-top: 88px;
+  }
+
   .nav {
     width: min(100% - 12px, 1480px);
     grid-template-columns: minmax(90px, 104px) 1fr 38px;

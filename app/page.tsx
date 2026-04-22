@@ -94,6 +94,11 @@ const solutionOutcomes = [
     text: 'Understand expense, profit, and due position every day so decisions can be made faster.',
   },
   {
+    title: 'Sales Monitor',
+    bn: 'সেলস মনিটর',
+    text: 'Track sales activity, follow performance trends, and keep daily sales progress visible in one place.',
+  },
+  {
     title: 'Better Team Coordination',
     bn: 'ভালো টিম কো-অর্ডিনেশন',
     text: 'Billing, receipt, accounts, and reporting stay aligned so teams work from the same information.',
@@ -102,11 +107,6 @@ const solutionOutcomes = [
     title: 'Stronger Management View',
     bn: 'শক্তিশালী ম্যানেজমেন্ট ভিউ',
     text: 'Give owners and managers a clean dashboard view of business performance, client movement, and collection progress.',
-  },
-  {
-    title: 'Less Manual Confusion',
-    bn: 'কম ম্যানুয়াল কনফিউশন',
-    text: 'Reduce spreadsheet dependency and make routine business tracking easier for every day operations.',
   },
 ];
 
@@ -297,46 +297,46 @@ export default function Home() {
                 <span>
                   <LangText
                     en='Actual module-based design'
-                    bn='রিয়েল মডিউল-বেসড ডিজাইন'
+                    bn='বাস্তব মডিউলভিত্তিক ডিজাইন'
                   />
                 </span>
                 <span>
                   <LangText
                     en='Collection and account focused'
-                    bn='কালেকশন ও অ্যাকাউন্ট ফোকাসড'
+                    bn='কালেকশন ও হিসাবকেন্দ্রিক'
                   />
                 </span>
                 <span>
                   <LangText
                     en='Admin-ready workflows'
-                    bn='অ্যাডমিন-রেডি ওয়ার্কফ্লো'
+                    bn='প্রশাসন-উপযোগী ওয়ার্কফ্লো'
                   />
                 </span>
               </div>
               <p className='eyebrow'>
                 <LangText
                   en='ERP Informative Website'
-                  bn='ইআরপি ইনফরমেটিভ ওয়েবসাইট'
+                  bn='ইআরপি তথ্যভিত্তিক ওয়েবসাইট'
                 />
               </p>
               <h1>
                 <LangText
-                  en='One smart ERP solution for collection, accounts, clients, and daily business control.'
-                  bn='collection, accounts, client আর daily business control-এর জন্য এক smart ERP solution।'
+                  en='Smart ERP for financial control, customer management, and daily operations.'
+                  bn='উন্নত আর্থিক নিয়ন্ত্রণ, গ্রাহক ব্যবস্থাপনা এবং দৈনন্দিন ব্যবসায়িক কাজের জন্য একটি স্মার্ট ERP সমাধান।'
                 />
               </h1>
               <p className='heroText'>
                 <LangText
                   en='This landing design is now based on your actual dashboard structure: collection, expense, profit, receivable, client summary, account balance, and the exact modules shown in your ERP sidebar.'
-                  bn='এই landing design এখন আপনার আসল dashboard structure অনুযায়ী সাজানো: collection, expense, profit, receivable, client summary, account balance, আর sidebar-এ থাকা exact module list.'
+                  bn='এই ল্যান্ডিং ডিজাইনটি আপনার বাস্তব ড্যাশবোর্ড কাঠামোর ভিত্তিতে সাজানো হয়েছে, যেখানে কালেকশন, খরচ, মুনাফা, বকেয়া, ক্লায়েন্ট সারসংক্ষেপ এবং হিসাবের অবস্থা পরিষ্কারভাবে তুলে ধরা হয়েছে।'
                 />
               </p>
               <div className='heroActions'>
                 <a className='primaryButton' href='#modules'>
-                  <LangText en='Explore modules' bn='মডিউল দেখুন' />
+                  <LangText en='Explore modules' bn='বিস্তারিত দেখুন' />
                 </a>
                 <a className='secondaryButton' href='#demo'>
-                  <LangText en='Book live demo' bn='লাইভ ডেমো বুক করুন' />
+                  <LangText en='Book live demo' bn='লাইভ ডেমো নিন' />
                 </a>
               </div>
               <div className='heroStats'>
@@ -386,13 +386,15 @@ export default function Home() {
                             <LangText en={card.title} bn={card.bn} />
                           </h3>
                           <strong>
-                            {card.title === 'Today Collection' ? '24,500' : '0.00'}
+                            {card.title === 'Today Collection'
+                              ? '24,500'
+                              : '0.00'}
                           </strong>
                         </div>
                       ))}
                       <div className='erpCompactPanel'>
                         <p className='erpCompactTitle'>
-                          <LangText en='Active Modules' bn='অ্যাকটিভ মডিউল' />
+                          <LangText en='Active Modules' bn='চলমান ফিচার' />
                         </p>
                         <div className='erpModulePills'>
                           <span>Invoice</span>
@@ -447,16 +449,13 @@ export default function Home() {
                     <div className='clientStatsPanel heroClientStats heroClientStatsWide'>
                       <article>
                         <small>
-                          <LangText en='Total Client' bn='মোট ক্লায়েন্ট' />
+                          <LangText en='Total Client' bn='মোট গ্রাহক' />
                         </small>
                         <strong>27</strong>
                       </article>
                       <article>
                         <small>
-                          <LangText
-                            en='Active Client'
-                            bn='অ্যাকটিভ ক্লায়েন্ট'
-                          />
+                          <LangText en='Active Client' bn='সক্রিয় গ্রাহক' />
                         </small>
                         <strong>26</strong>
                       </article>
@@ -464,7 +463,7 @@ export default function Home() {
                         <small>
                           <LangText
                             en='Inactive Client'
-                            bn='ইনঅ্যাকটিভ ক্লায়েন্ট'
+                            bn='নিষ্ক্রিয় গ্রাহক'
                           />
                         </small>
                         <strong>01</strong>
@@ -836,6 +835,44 @@ export default function Home() {
                 bn='billing, collection, accounts, client, reporting, payroll, administration আর operational visibility-কেন্দ্রিক একটি ERP website।'
               />
             </p>
+            <div
+              className='footerSocials'
+              aria-label='Social and contact links'
+            >
+              <a
+                href='https://m360ict.com/'
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Visit M360ICT website'
+                title='Website'
+              >
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 9h-3.1a15.5 15.5 0 0 0-1.1-5 8.05 8.05 0 0 1 4.2 5ZM12 4.1c.7 1 1.4 3.1 1.7 6.9h-3.4c.3-3.8 1-5.9 1.7-6.9ZM4.3 13h3.8c.1 1.8.4 3.5.8 4.9A8.02 8.02 0 0 1 4.3 13Zm3.8-2H4.3a8.02 8.02 0 0 1 4.6-4.9A20.6 20.6 0 0 0 8.1 11Zm3.9 8.9c-.7-1-1.4-3.1-1.7-6.9h3.4c-.3 3.8-1 5.9-1.7 6.9Zm3.1-2c.4-1.4.7-3.1.8-4.9h3.8a8.02 8.02 0 0 1-4.6 4.9Z' />
+                </svg>
+              </a>
+              <a
+                href='https://www.linkedin.com/company/m360-ict'
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Visit M360ICT LinkedIn'
+                title='LinkedIn'
+              >
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path d='M6.9 8.9H3.5v11.2h3.4V8.9ZM5.2 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm15.3 10.3c0-3.1-1.7-5.1-4.4-5.1-1.8 0-2.8 1-3.2 1.7V8.9H9.6v11.2H13v-6.2c0-1.6.8-2.5 2.1-2.5 1.2 0 2 1 2 2.5v6.2h3.4v-6.3Z' />
+                </svg>
+              </a>
+              <a
+                href='https://www.facebook.com/m360ict'
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Visit M360ICT Facebook'
+                title='Facebook'
+              >
+                <svg viewBox='0 0 24 24' aria-hidden='true'>
+                  <path d='M14 8.1h2.2V4.4c-.4-.1-1.7-.2-3.2-.2-3.2 0-5.3 1.9-5.3 5.5v3.1H4.2V17h3.5v5h4.2v-5h3.4l.6-4.2h-4V10c0-1.2.4-1.9 2.1-1.9Z' />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div className='footerLinks'>
