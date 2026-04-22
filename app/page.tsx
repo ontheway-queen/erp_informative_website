@@ -386,20 +386,20 @@ export default function Home() {
               <div className='heroChips' aria-label='Actual ERP highlights'>
                 <span>
                   <LangText
-                    en='Actual module-based design'
-                    bn='বাস্তব মডিউলভিত্তিক ডিজাইন'
+                    en='Real-time data'
+                    bn='রিয়েল-টাইম ডাটা'
                   />
                 </span>
                 <span>
                   <LangText
-                    en='Collection and account focused'
-                    bn='কালেকশন ও হিসাবকেন্দ্রিক'
+                    en='Smart workflows'
+                    bn='স্মার্ট ওয়ার্কফ্লো'
                   />
                 </span>
                 <span>
                   <LangText
-                    en='Admin-ready workflows'
-                    bn='প্রশাসন-উপযোগী ওয়ার্কফ্লো'
+                    en='Connected teams'
+                    bn='কানেক্টেড টিম'
                   />
                 </span>
               </div>
@@ -681,8 +681,8 @@ export default function Home() {
           </p>
           <h2>
             <LangText
-              en='This ERP informative site works best when visitors can quickly see whether the product matches their business type.'
-              bn='visitor যেন দ্রুত বুঝতে পারে product-ta তার business type-এর সাথে মেলে কি না, সেই দিক থেকেই এই ERP informative site সবচেয়ে ভালো কাজ করে।'
+              en='Visitors connect faster when they can quickly see whether the product fits their business type.'
+              bn='visitor দ্রুত connect করে যখন সে সহজেই বুঝতে পারে product-ta তার business type-এর সাথে মানানসই কি না।'
             />
           </h2>
         </div>
