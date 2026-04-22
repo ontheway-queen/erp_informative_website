@@ -3145,7 +3145,7 @@ p {
   letter-spacing: -0.04em;
 }
 
-.actualModuleHeroClean > p {
+.actualModuleHeroClean>p {
   max-width: 720px;
   font-size: 1.02rem;
 }
@@ -3330,6 +3330,264 @@ p {
 
 .reportFocusGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reportsExperienceGrid {
+  margin-bottom: 22px;
+}
+
+.reportsSection .sectionHead {
+  max-width: 860px;
+}
+
+.reportsGraphPanel {
+  position: relative;
+  margin-top: 8px;
+  padding: 24px;
+  border: 1px solid rgba(0, 127, 168, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 180, 233, 0.14), transparent 10rem),
+    var(--white);
+  box-shadow: 0 16px 34px rgba(8, 45, 59, 0.08);
+}
+
+.reportsGraphPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(90deg, var(--cyan), #64d7ff, #7c6cff);
+}
+
+.reportsGraphHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reportsGraphHeader .eyebrow {
+  margin-bottom: 10px;
+}
+
+.reportsGraphHeader h3 {
+  margin: 0;
+  font-size: 1.16rem;
+  line-height: 1.4;
+}
+
+.reportsGraphHeader strong {
+  min-width: 56px;
+  min-height: 34px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(0, 180, 233, 0.12);
+  color: var(--cyan-deep);
+  font-size: 0.82rem;
+}
+
+.reportsOverviewStats {
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reportsOverviewStats article {
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(0, 180, 233, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(237, 249, 255, 0.92));
+}
+
+.reportsOverviewStats small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.reportsOverviewStats strong {
+  color: var(--ink);
+  font-size: 1.06rem;
+}
+
+.reportsGraphBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.reportsTrendCard,
+.reportsMixCard {
+  padding: 18px;
+  border: 1px solid rgba(0, 180, 233, 0.14);
+  border-radius: 8px;
+  background: rgba(248, 252, 255, 0.94);
+}
+
+.reportsTrendCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.reportsTrendCard::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 54px;
+  background: linear-gradient(180deg, rgba(0, 180, 233, 0.08), transparent);
+  pointer-events: none;
+}
+
+.reportsMixCard {
+  /* margin-top: 16px; */
+  display: grid;
+  grid-template-columns: 138px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.reportsTrendMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reportsTrendMeta,
+.reportsTrendBars {
+  position: relative;
+  z-index: 1;
+}
+
+.reportsTrendMeta span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.reportsTrendMeta strong {
+  color: var(--cyan-deep);
+  font-size: 1.3rem;
+}
+
+.reportsTrendBars {
+  min-height: 208px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+  background-image: linear-gradient(rgba(16, 24, 23, 0.07) 1px, transparent 1px);
+  background-size: 100% 48px;
+}
+
+.reportsTrendBar {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.reportsTrendBar small,
+.reportsTrendBar b {
+  font-size: 0.76rem;
+}
+
+.reportsTrendBar small {
+  color: var(--cyan-deep);
+  font-weight: 800;
+}
+
+.reportsTrendBar span {
+  width: 100%;
+  min-height: 12px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, var(--cyan), rgba(0, 180, 233, 0.2));
+  box-shadow: 0 12px 20px rgba(0, 180, 233, 0.18);
+}
+
+.reportsTrendBar:nth-child(3n+2) span {
+  background: linear-gradient(180deg, #64d7ff, rgba(100, 215, 255, 0.18));
+}
+
+.reportsTrendBar:nth-child(3n) span {
+  background: linear-gradient(180deg, #7c6cff, rgba(124, 108, 255, 0.18));
+}
+
+.reportsTrendBar b {
+  color: var(--muted);
+}
+
+.reportsMixDonut {
+  width: 138px;
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--cyan) 0 68%, #64d7ff 68% 90%, #7c6cff 90% 100%);
+  filter: drop-shadow(0 16px 26px rgba(0, 127, 168, 0.16));
+}
+
+.reportsMixDonut::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: inherit;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px rgba(0, 180, 233, 0.12);
+}
+
+.reportsMixDonut span {
+  position: relative;
+  z-index: 1;
+  color: var(--cyan-deep);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.reportsMixLegend {
+  display: grid;
+  gap: 12px;
+}
+
+.reportsMixLegend p {
+  margin: 0;
+  padding: 10px 12px;
+  display: grid;
+  gap: 3px;
+  border: 1px solid rgba(0, 180, 233, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.reportsMixLegend strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.reportsMixLegend p:nth-child(1) {
+  border-left: 4px solid var(--cyan);
+}
+
+.reportsMixLegend p:nth-child(2) {
+  border-left: 4px solid #64d7ff;
+}
+
+.reportsMixLegend p:nth-child(3) {
+  border-left: 4px solid #7c6cff;
 }
 
 .journeySection,
@@ -3531,6 +3789,10 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
+  .reportsGraphBody {
+    grid-template-columns: 1fr;
+  }
+
   .erpDashboardPreview {
     grid-column: 1 / -1;
   }
@@ -3590,6 +3852,23 @@ p {
     min-height: auto;
     max-height: none;
     overflow: visible;
+  }
+
+  .reportsMixCard {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .reportsOverviewStats {
+    grid-template-columns: 1fr;
+  }
+
+  .reportsMixLegend {
+    width: 100%;
+  }
+
+  .reportsGraphBody {
+    grid-template-columns: 1fr;
   }
 
   .laptopMockup {

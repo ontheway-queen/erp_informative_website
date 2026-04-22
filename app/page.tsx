@@ -208,6 +208,27 @@ const reportBlocks = [
   },
 ];
 
+const reportTrendBars = [
+  { label: 'Mon', value: '12k', height: '44%' },
+  { label: 'Tue', value: '18k', height: '62%' },
+  { label: 'Wed', value: '15k', height: '54%' },
+  { label: 'Thu', value: '24k', height: '82%' },
+  { label: 'Fri', value: '21k', height: '72%' },
+  { label: 'Sat', value: '27k', height: '96%' },
+];
+
+const reportOverviewStats = [
+  { en: 'Sales', bn: 'সেলস', value: 'BDT 27K' },
+  { en: 'Expense', bn: 'খরচ', value: 'BDT 9K' },
+  { en: 'Profit', bn: 'লাভ', value: 'BDT 18K' },
+];
+
+const reportMix = [
+  { en: 'Sales share', bn: 'সেলস শেয়ার', value: '54%' },
+  { en: 'Expense ratio', bn: 'খরচ অনুপাত', value: '26%' },
+  { en: 'Receivable load', bn: 'রিসিভেবল লোড', value: '20%' },
+];
+
 const showcasePanels = [
   {
     title: 'Client and Collection Experience',
@@ -774,23 +795,88 @@ export default function Home() {
           </p>
           <h2>
             <LangText
-              en='Reports, account summaries, and client counts are now central visual elements.'
-              bn='report, account summary আর client count এখন central visual element।'
+              en='Reports, account summaries, and financial graphs now carry the story more clearly.'
+              bn='রিপোর্ট, অ্যাকাউন্ট সামারি আর ফিন্যান্সিয়াল গ্রাফ এখন story-ta আরও পরিষ্কারভাবে তুলে ধরে।'
             />
           </h2>
         </div>
-        <div className='reportFocusGrid'>
-          {reportBlocks.map((block) => (
-            <article key={block.title}>
-              <h3>
-                <LangText en={block.title} bn={block.bn} />
-              </h3>
-              <p>
-                <LangText en={block.text} bn={block.text} />
-              </p>
-            </article>
-          ))}
+        <div className='reportsExperienceGrid'>
+          <div className='reportFocusGrid'>
+            {reportBlocks.map((block) => (
+              <article key={block.title}>
+                <h3>
+                  <LangText en={block.title} bn={block.bn} />
+                </h3>
+                <p>
+                  <LangText en={block.text} bn={block.text} />
+                </p>
+              </article>
+            ))}
+          </div>
+
         </div>
+
+        <aside className='reportsGraphPanel' aria-label='Reporting graph preview'>
+          <div className='reportsGraphHeader'>
+            <div>
+              <p className='eyebrow'>
+                <LangText en='Financial Snapshot' bn='ফিন্যান্সিয়াল স্ন্যাপশট' />
+              </p>
+              <h3>
+                <LangText
+                  en='A better arranged report section helps users grasp sales, expense, and profit trends instantly.'
+                  bn='আরও সুন্দরভাবে সাজানো report section user-কে sales, expense আর profit trend দ্রুত বুঝতে সাহায্য করে।'
+                />
+              </h3>
+            </div>
+            <strong>Live</strong>
+          </div>
+
+          <div className='reportsOverviewStats'>
+            {reportOverviewStats.map((item) => (
+              <article key={item.en}>
+                <small>
+                  <LangText en={item.en} bn={item.bn} />
+                </small>
+                <strong>{item.value}</strong>
+              </article>
+            ))}
+          </div>
+
+          <div className='reportsGraphBody'>
+            <div className='reportsTrendCard'>
+              <div className='reportsTrendMeta'>
+                <span>
+                  <LangText en='Weekly sales monitor' bn='সাপ্তাহিক সেলস মনিটর' />
+                </span>
+                <strong>BDT 27,000</strong>
+              </div>
+              <div className='reportsTrendBars' aria-hidden='true'>
+                {reportTrendBars.map((item) => (
+                  <div key={item.label} className='reportsTrendBar'>
+                    <small>{item.value}</small>
+                    <span style={{ height: item.height }}></span>
+                    <b>{item.label}</b>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className='reportsMixCard'>
+              <div className='reportsMixDonut' aria-hidden='true'>
+                <span>100%</span>
+              </div>
+              <div className='reportsMixLegend'>
+                {reportMix.map((item) => (
+                  <p key={item.en}>
+                    <strong>{item.value}</strong>
+                    <LangText en={item.en} bn={item.bn} />
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
       </section>
 
       <PricingPlans />
