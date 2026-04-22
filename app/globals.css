@@ -2542,7 +2542,7 @@ p {
 }
 
 .erpHero {
-  min-height: 100svh;
+  min-height: 100vh;
   background:
     radial-gradient(circle at 12% 18%, rgba(24, 205, 255, 0.11), transparent 16rem),
     radial-gradient(circle at 88% 16%, rgba(135, 126, 232, 0.14), transparent 22rem),
@@ -2562,8 +2562,8 @@ p {
 
 .erpHeroContent {
   width: min(1420px, calc(100% - 32px));
-  padding: 118px 0 28px;
-  min-height: 100svh;
+  padding: 108px 0 20px;
+  min-height: 100vh;
   display: grid;
   align-items: center;
 }
@@ -2573,9 +2573,9 @@ p {
   grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.95fr);
   gap: 22px;
   align-items: stretch;
-  min-height: calc(100svh - 150px);
-  max-height: calc(100svh - 150px);
-  padding: 24px;
+  min-height: calc(100vh - 300px);
+  max-height: calc(100vh - 148px);
+  padding: 20px;
   border-radius: 28px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.01)),
@@ -3412,7 +3412,7 @@ p {
   color: var(--ink);
 }
 
-.trustBand .comparisonRow > span {
+.trustBand .comparisonRow>span {
   background: linear-gradient(135deg, #0f92bf, #13b5db);
   box-shadow: 0 12px 24px rgba(15, 146, 191, 0.18);
 }
@@ -3991,12 +3991,12 @@ p {
     width: 100%;
   }
 
-    .reportsGraphBody {
-      grid-template-columns: 1fr;
-    }
+  .reportsGraphBody {
+    grid-template-columns: 1fr;
+  }
 
-    .laptopMockup {
-      padding: 12px;
+  .laptopMockup {
+    padding: 12px;
   }
 
   .laptopScreen {
