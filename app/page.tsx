@@ -140,6 +140,75 @@ const summaryCards = [
   },
 ];
 
+const fitProfiles = [
+  {
+    title: 'Multi-branch Businesses',
+    bn: 'মাল্টি-ব্রাঞ্চ ব্যবসা',
+    text: 'Keep branch-wise billing, collection, balance, and reporting visible from one connected system.',
+  },
+  {
+    title: 'Service and Subscription Teams',
+    bn: 'সার্ভিস ও সাবস্ক্রিপশন টিম',
+    text: 'Handle quotation, invoicing, renewals, money receipt, and follow-up without breaking the workflow.',
+  },
+  {
+    title: 'Accounts and Collection Desks',
+    bn: 'অ্যাকাউন্টস ও কালেকশন টিম',
+    text: 'Track receivable movement, cheque status, expense, and daily financial control with less back-and-forth.',
+  },
+  {
+    title: 'Owners and Managers',
+    bn: 'ওনার ও ম্যানেজমেন্ট',
+    text: 'Get a quicker management view of sales, expense, profit, due position, and operational progress.',
+  },
+];
+
+const whyChoosePoints = [
+  {
+    title: 'Workflow Matched Setup',
+    bn: 'ওয়ার্কফ্লো-ভিত্তিক সেটআপ',
+    text: 'The site communicates how the ERP fits your real billing, accounts, collection, and reporting flow.',
+  },
+  {
+    title: 'Decision-friendly Reporting',
+    bn: 'ডিসিশন-ফ্রেন্ডলি রিপোর্টিং',
+    text: 'Visitors can immediately understand that reports, graphs, and summaries support faster business decisions.',
+  },
+  {
+    title: 'Implementation Support',
+    bn: 'ইমপ্লিমেন্টেশন সাপোর্ট',
+    text: 'The product story already points toward demo, setup guidance, and practical onboarding help.',
+  },
+];
+
+const trustHighlights = [
+  { value: 'Demo-led', en: 'Product walkthrough', bn: 'প্রোডাক্ট ওয়াকথ্রু' },
+  { value: '10AM-6PM', en: 'Support window', bn: 'সাপোর্ট সময়' },
+  { value: 'Real Flow', en: 'Module mapping', bn: 'মডিউল ম্যাপিং' },
+  { value: 'Finance-first', en: 'Reporting clarity', bn: 'রিপোর্টিং ক্ল্যারিটি' },
+];
+
+const painComparisons = [
+  {
+    beforeTitle: 'Manual follow-up pressure',
+    beforeText: 'Teams check calls, spreadsheets, and notes separately, so due follow-up gets delayed.',
+    afterTitle: 'Central follow-up visibility',
+    afterText: 'Collection, receipt, and receivable status stay in one flow, so action becomes faster.',
+  },
+  {
+    beforeTitle: 'Unclear daily numbers',
+    beforeText: 'Sales, expense, and profit stay scattered, making daily business decisions slower.',
+    afterTitle: 'Decision-ready daily snapshot',
+    afterText: 'A clear dashboard and report view helps management understand today position immediately.',
+  },
+  {
+    beforeTitle: 'Too much back-and-forth',
+    beforeText: 'Billing, accounts, and reporting teams often work from different references and shared files.',
+    afterTitle: 'Connected operational flow',
+    afterText: 'Quotation, invoice, receipt, accounts, and report flow stay aligned inside one system.',
+  },
+];
+
 const workflows = [
   {
     title: 'Sales to Billing',
@@ -605,6 +674,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className='sectionWrap fitSection animatedSection'>
+        <div className='sectionHead'>
+          <p className='eyebrow'>
+            <LangText en='Who It Fits' bn='কার জন্য উপযোগী' />
+          </p>
+          <h2>
+            <LangText
+              en='This ERP informative site works best when visitors can quickly see whether the product matches their business type.'
+              bn='visitor যেন দ্রুত বুঝতে পারে product-ta তার business type-এর সাথে মেলে কি না, সেই দিক থেকেই এই ERP informative site সবচেয়ে ভালো কাজ করে।'
+            />
+          </h2>
+        </div>
+        <div className='fitGrid'>
+          {fitProfiles.map((item) => (
+            <article key={item.title}>
+              <h3>
+                <LangText en={item.title} bn={item.bn} />
+              </h3>
+              <p>
+                <LangText en={item.text} bn={item.text} />
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section
         className='sectionWrap dashboardViewSection animatedSection'
         id='dashboard-view'
@@ -877,6 +972,78 @@ export default function Home() {
             </div>
           </div>
         </aside>
+      </section>
+
+      <section className='sectionBand trustBand animatedSection'>
+        <div className='trustInner'>
+          <div className='trustIntro'>
+            <p className='eyebrow'>
+              <LangText en='Why This Site Works' bn='কেন এই site কাজ করে' />
+            </p>
+            <h2>
+              <LangText
+                en='Less delay, less confusion, and a much easier way to manage everyday ERP work.'
+                bn='কম delay, কম confusion, আর দৈনন্দিন ERP কাজ manage করার অনেক সহজ একটি উপায়।'
+              />
+            </h2>
+            <p>
+              <LangText
+                en='Visitors do not need internal complexity first. They need to see fewer delays, less confusion, faster follow-up, and a cleaner reporting view.'
+                bn='visitor প্রথমেই internal complexity দেখতে চায় না। সে দেখতে চায় কম delay, কম confusion, দ্রুত follow-up আর cleaner reporting view।'
+              />
+            </p>
+          </div>
+
+          <div className='comparisonGrid'>
+            {painComparisons.map((item) => (
+              <article className='comparisonRow' key={item.beforeTitle}>
+                <div>
+                  <strong>
+                    <LangText en='Before ERP' bn='ERP-এর আগে' />
+                  </strong>
+                  <p>
+                    <strong>{item.beforeTitle}</strong>
+                  </p>
+                  <p>{item.beforeText}</p>
+                </div>
+                <span aria-hidden='true'>+</span>
+                <div>
+                  <strong>
+                    <LangText en='With ERP' bn='ERP-এর পরে' />
+                  </strong>
+                  <p>
+                    <strong>{item.afterTitle}</strong>
+                  </p>
+                  <p>{item.afterText}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className='whyChooseGrid'>
+            {whyChoosePoints.map((item) => (
+              <article key={item.title}>
+                <h3>
+                  <LangText en={item.title} bn={item.bn} />
+                </h3>
+                <p>
+                  <LangText en={item.text} bn={item.text} />
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className='trustHighlights'>
+            {trustHighlights.map((item) => (
+              <article key={item.en}>
+                <strong>{item.value}</strong>
+                <small>
+                  <LangText en={item.en} bn={item.bn} />
+                </small>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <PricingPlans />
